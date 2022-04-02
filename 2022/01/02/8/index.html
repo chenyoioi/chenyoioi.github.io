@@ -533,12 +533,12 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2022-03-03 12:13:10'>2022-01-02 22:16</time>
+            Created At : <time class="date" title='Updated At: 2022-04-02 20:23:26'>2022-01-02 22:16</time>
         
     </div>
     <div class="article-meta">
         
-        <span>Count:129</span>
+        <span>Count:152</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -579,6 +579,18 @@
 个人备份：docker pull cyblh/qinglong:latest  #官方2.10.13版本
 </code></pre>
 <p>2.命令部署</p>
+<p>官方镜像</p>
+<pre><code>docker run -dit \
+   -v $PWD/ql/config:/ql/config \
+   -v $PWD/ql/log:/ql/log \
+   -v $PWD/ql/db:/ql/db \
+   -p 41937:5700 \
+   --name cheny \
+   --hostname cheny \
+   --restart always \
+   whyour/qinglong:latest
+</code></pre>
+<p>备份镜像</p>
 <pre><code>docker run -dit \
 -v $pwd/ql/config:/ql/config \
 -v $pwd/ql/log:/ql/log \
@@ -590,8 +602,7 @@
 --name qinglong \
 --hostname qinglong \
 --restart always \
-whyour/qinglong:latest
-cyblh/qinglong:latest  #备份镜像使用这里替换倒数第二行
+cyblh/qinglong:latest
 </code></pre>
 <p><em>说明：冒号前为本地映射出来的文件，可以更改。</em></p>
 
