@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>《红楼梦》有感 | 小陈书屋</title>
-  <meta name="keywords" content=" 读书 ">
-  <meta name="description" content="《红楼梦》有感 | 小陈书屋">
+  <title>LOLapi开发思路 | 小陈书屋</title>
+  <meta name="keywords" content=" LOL ">
+  <meta name="description" content="LOLapi开发思路 | 小陈书屋">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="LOL API用 c# 实现的 自动接受对局 和 快速锁定英雄。  选择框支持一定的模糊搜索 选定英雄之后，点击自动接受即可  开发过程1.获取 lol 客户端暴露的 端口 和 密码，使用管理员身份运行 cmd，输入一下命令。 WMIC PROCESS WHERE name&#x3D;\&quot;LeagueClientUx.exe\&quot; GET commandline  &#x2F;&#x2F; 使用 c# 也是如">
 <meta property="og:type" content="article">
@@ -564,9 +564,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-2" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-36" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">《红楼梦》有感</h1>
+        <h1 class="article-title">LOLapi开发思路</h1>
     
     <div class="article-meta">
         
@@ -576,7 +576,7 @@
             <i class="iconfont icon-category"></i>
             
             
-            <a  data-rel="胡言乱语">胡言乱语</a>
+            <a  data-rel="折腾经历">折腾经历</a>
             
         </span>
         
@@ -584,19 +584,19 @@
         <span class="tag">
             <i class="iconfont icon-tag"></i>
             
-            <a class="color3">读书</a>
+            <a class="color4">LOL</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2022-04-25 22:21:32'>2021-12-21 19:41</time>
+            Created At : <time class="date" title='Updated At: 2022-08-10 21:15:27'>2022-08-10 21:10</time>
         
     </div>
     <div class="article-meta">
         
-        <span>Count:886</span>
+        <span>Count:1.1k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -615,7 +615,7 @@
     
     <div class="toc-ref">
     
-        
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#LOL-API"><span class="toc-text">LOL API</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BC%80%E5%8F%91%E8%BF%87%E7%A8%8B"><span class="toc-text">开发过程</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -631,13 +631,186 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>今天早上洗澡的时候，忽然想起《红楼梦》来，想起宝玉与黛玉与宝钗的爱情来，我一向是赞同金玉良缘，不看好木石前盟的。因为我觉得黛玉不适合结婚，而宝钗大方，善于处理人际关系，可以扶持丈夫。可是今天我忽然明白了宝玉出家的原因，如果不爱，再合适又有什么用呢？在这吉光片羽的开示下，我深深地深深地为宝玉和黛玉难过，这是我读《红楼梦》以来第一次如此。</p>
-<p>如果你觉得这很平常，那你应该看看以前的我，那时和人讨论他们三个人之间的爱情，我都是坚定的金玉良缘派，我的理由有许多，每一个理由都是站得住脚的，我想和我坚持一样观点的人也是如此的，都能说出一套套的观点。可是现在回想，那时我们恰好忘了一件事，当我们说这些的时候，我们只是站在自己角度，站在现实基础上来考虑的，从来没有站在宝玉黛玉，站在爱情的位置上考虑过。如果站在你面前的那个人，是你这一生最爱最爱的人，如果不能和她在一起，无论代替的那个人是多么多么好，都是伤感的，都是伤心的。如果那个人你永远错过，永远拥有不到，这是多么多么让人难过啊。</p>
-<p>可是那时的我并没有想到这些，我并不是唯利是图，追逐利益的人，可是像我这样的人，多少有点不相信爱情，多少有点想向现实妥协来显示自己的成熟。于是我罔顾了自己的心，罔顾了宝玉爱着黛玉，黛玉爱着宝玉的那颗“只有你才好”的心。</p>
-<p>宝钗自然是极好极好的人，配宝玉是绰绰有余的，可是她不爱宝玉，宝玉也不爱她，对宝钗来说，贾宝玉甄宝玉又有什么不同？可是对于宝玉来说，张黛玉林黛玉，他只爱着林黛玉。</p>
-<p>我想我是不是太过于实用主义，太过于要把自己变得现实而标榜自己成熟了？我真羡慕那些一开始就对黛玉抱着好感，对宝玉和黛玉抱着同情心的人，这些人应该更具有同理心同情心吧，他们从来没有在爱情和现实之间摇摆过，他们的终心和初心都是一样的。</p>
-<p>可是我又深深为自己感到幸运，在今天，在那弹指一瞬间，那种伤感完全弥漫开来，将我完完整整地包裹住，就像是我洗澡时那充沛的热水，完完整整地包裹住了我。而我真想为宝玉和黛玉大哭一场。我无法想象黛玉知道了宝玉娶的是宝钗不是自己时的那种肝肠寸断，也不敢想象宝玉知道黛玉再也不在人世间时的那种心碎，我理解他们太晚了一些。</p>
-<p>可是他们又哪里害怕别人理解他们晚呢，早理解了，他们是那样，晚理解了，他们还是那样，就算是始终不理解，他们也还是那样。可是这于我却是不一样的，我到底少了一丝戾气，多了一点真情。</p>
+        <h1 id="LOL-API"><a href="#LOL-API" class="headerlink" title="LOL API"></a>LOL API</h1><p>用 c# 实现的 自动接受对局 和 快速锁定英雄。</p>
+<ul>
+<li>选择框支持一定的模糊搜索</li>
+<li>选定英雄之后，点击自动接受即可</li>
+</ul>
+<h1 id="开发过程"><a href="#开发过程" class="headerlink" title="开发过程"></a>开发过程</h1><p>1.获取 lol 客户端暴露的 <code>端口</code> 和 <code>密码</code>，使用管理员身份运行 <code>cmd</code>，输入一下命令。</p>
+<pre><code>WMIC PROCESS WHERE name=\&quot;LeagueClientUx.exe\&quot; GET commandline
+</code></pre>
+<pre><code>// 使用 c# 也是如此，模拟命令行，执行命令，获取输入结果，因此程序也需要以管理员的身份运行
+//获取cmd.exe程序
+var startInfo = new System.Diagnostics.ProcessStartInfo(&quot;cmd.exe&quot;);
+//设置启动的一些参数
+startInfo.UseShellExecute = false;
+startInfo.RedirectStandardInput = true;
+startInfo.RedirectStandardOutput = true;
+startInfo.RedirectStandardError = true;
+startInfo.CreateNoWindow = true;
+//获取Process类的新实例
+var myProcess = new System.Diagnostics.Process();
+myProcess.StartInfo = startInfo;
+//启动 cmd.exe
+myProcess.Start();
+// 输入命令
+myProcess.StandardInput.WriteLine(command);
+
+// 此处很关键，需要输入 exit 表示命令结束，不然会一直阻塞，获取不到输出结果
+myProcess.StandardInput.WriteLine(&quot;exit&quot;);
+
+StreamReader reader = myProcess.StandardOutput;
+// 读取命令执行的结果
+string strOuput = reader.ReadToEnd();
+reader.Close();
+myProcess.WaitForExit();
+myProcess.Close();
+
+// 再使用正则表达式从读取结果中解析出 端口号 和 密码
+
+// 规则匹配
+Regex portRegex = new Regex(&quot;--app-port=([0-9]*)&quot;);
+Regex tokenRegex = new Regex(&quot;--remoting-auth-token=([\\w-]*)&quot;);
+port = portRegex.Match(strOuput).Value;
+token = tokenRegex.Match(strOuput).Value;
+</code></pre>
+<p>2.构建 request 请求</p>
+<ul>
+<li>ip 地址是本机</li>
+<li>端口是解析出来的 <code>port</code></li>
+<li>请求头中需要条件 <code>Authorization</code>，用户名是 <code>riot</code>，密码是解析出来的 <code>password</code></li>
+</ul>
+<pre><code>// &#123;用户名:密码&#125; 的 base64 编码
+string authorize = Convert.ToBase64String(Encoding.ASCII.GetBytes($&quot;&#123;username&#125;:&#123;password&#125;&quot;));
+
+request.Headers.Add(&quot;Authorization&quot;, &quot;Basic &quot; + authorize);
+</code></pre>
+<p>3.接口说明</p>
+<p>简单介绍一下自己使用到的接口</p>
+<ul>
+<li>获取已拥有的英雄的信息（GET <code>/lol-champions/v1/owned-champions-minimal</code>），下面是返回结果(只选取了一个出来分析)：</li>
+</ul>
+<pre><code>[
+ &#123;
+     &quot;active&quot;: true,
+     &quot;alias&quot;: &quot;Annie&quot;,
+     &quot;banVoPath&quot;: &quot;/lol-game-data/assets/v1/champion-ban-vo/1.ogg&quot;,
+     &quot;baseLoadScreenPath&quot;: &quot;/lol-game-data/assets/ASSETS/Characters/Annie/Skins/Base/AnnieLoadScreen.jpg&quot;,
+     &quot;baseSplashPath&quot;: &quot;/lol-game-data/assets/v1/champion-splashes/1/1000.jpg&quot;,
+     &quot;botEnabled&quot;: true,
+     &quot;chooseVoPath&quot;: &quot;/lol-game-data/assets/v1/champion-choose-vo/1.ogg&quot;,
+     &quot;disabledQueues&quot;: [],
+     &quot;freeToPlay&quot;: false,
+     &quot;id&quot;: 1,
+     &quot;name&quot;: &quot;黑暗之女&quot;,
+     &quot;ownership&quot;: &#123;
+         &quot;freeToPlayReward&quot;: false,
+         &quot;owned&quot;: true,
+         &quot;rental&quot;: &#123;
+             &quot;endDate&quot;: 0,
+             &quot;purchaseDate&quot;: 1526968649000,
+             &quot;rented&quot;: false,
+             &quot;winCountRemaining&quot;: 0
+         &#125;
+     &#125;,
+     &quot;purchased&quot;: 1526968649000,
+     &quot;rankedPlayEnabled&quot;: true,
+     &quot;roles&quot;: [
+         &quot;mage&quot;
+     ],
+     &quot;squarePortraitPath&quot;: &quot;/lol-game-data/assets/v1/champion-icons/1.png&quot;,
+     &quot;stingerSfxPath&quot;: &quot;/lol-game-data/assets/v1/champion-sfx-audios/1.ogg&quot;,
+     &quot;title&quot;: &quot;安妮&quot;
+ &#125;,
+...... 
+]
+</code></pre>
+<ul>
+<li>其中 <code>squarePortraitPath</code>可以获取英雄头像，<code>stingerSfxPath</code>可以获取英雄的声音，<code>id</code> 很是自动锁定英雄的关键</li>
+<li>接受对局（GET <code>/lol-matchmaking/v1/ready-check/accept</code>）我是直接在定时器里轮询访问这个接口</li>
+<li>获取用户信息（GET <code>/lol-login/v1/session</code>），获取其中的 <code>summonerId</code></li>
+</ul>
+<pre><code>&#123;
+ &quot;accountId&quot;: 2964199082,
+ &quot;connected&quot;: true,
+ &quot;error&quot;: null,
+ &quot;gasToken&quot;: null,
+.......
+ &quot;isInLoginQueue&quot;: false,
+ &quot;isNewPlayer&quot;: false,
+ &quot;puuid&quot;: &quot;81fc717d-67a8-513d-891e-d20fd3b47bf7&quot;,
+ &quot;state&quot;: &quot;SUCCEEDED&quot;,
+ &quot;summonerId&quot;: 2964199082,
+......
+ &quot;username&quot;: &quot;2964199082&quot;
+&#125;
+</code></pre>
+<p>锁定英雄</p>
+<ul>
+<li>首先要获取队伍信息（GET <code>/lol-champ-select/v1/session</code>），json 格式如下：</li>
+</ul>
+<pre><code>// 只保留了一部分关键的数据，关键的就是 actions 数组 和 myTeam 数组
+&#123;
+   &quot;actions&quot;: [
+       [
+           &#123;
+               &quot;actorCellId&quot;: 0,
+               &quot;championId&quot;: 0,
+               &quot;completed&quot;: false,
+               &quot;id&quot;: 1,
+               &quot;isAllyAction&quot;: true,
+               &quot;isInProgress&quot;: true,
+               &quot;pickTurn&quot;: 1,
+               &quot;type&quot;: &quot;pick&quot;
+           &#125;
+       ]
+   ],
+.......
+   &quot;myTeam&quot;: [
+       &#123;
+           &quot;assignedPosition&quot;: &quot;&quot;,
+           &quot;cellId&quot;: 0, // 与 actions 中 actorCellId 一致
+           &quot;championId&quot;: 0,
+           &quot;championPickIntent&quot;: 0,
+           &quot;entitledFeatureType&quot;: &quot;&quot;,
+           &quot;selectedSkinId&quot;: 0,
+           &quot;spell1Id&quot;: 1,
+           &quot;spell2Id&quot;: 3,
+           &quot;summonerId&quot;: 2964199082,
+           &quot;team&quot;: 1,
+           &quot;wardSkinId&quot;: 91
+       &#125;
+   ]
+   ........
+&#125;
+</code></pre>
+<ul>
+<li>首先遍历 <code>myTeam</code> 数组，根据用户的 <code>summonerId</code> 获取 <code>myTeam</code>中自己的那项信息</li>
+<li>从该项中获取 <code>cellId</code>的值</li>
+<li>再遍历 <code>actions</code>数组，根据 <code>cellId</code>和 <code>actorCellId</code> 的关系，获取该项</li>
+<li>获取 <code>actions</code> 中的 <code>id</code></li>
+<li>发送请求锁定英雄</li>
+</ul>
+<ol>
+<li>请求的地址（PATCH <code>/lol-champ-select/v1/session/actions/&#123;actions 中的 id&#125;</code>）</li>
+<li>构建发送请求的数据</li>
+</ol>
+<pre><code>// 只需要将 atcions 数组中获取的自己的那项中的 championId 换成 想要选择的英雄的 id 即可
+&#123;
+  &quot;actorCellId&quot;: 0,
+  &quot;championId&quot;: &#123;此处为上面获取已拥有的英雄信息中的英雄 id&#125;,
+  &quot;completed&quot;: false,
+  &quot;id&quot;: 1,
+  &quot;isAllyAction&quot;: true,
+  &quot;isInProgress&quot;: true,
+  &quot;pickTurn&quot;: 1,
+  &quot;type&quot;: &quot;pick&quot;
+&#125;
+</code></pre>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><ol>
+<li>总体来说功能还是很简单的，实现也不复杂</li>
+<li>锁定英雄这个功能搞了好久，之前在 <code>url</code>后面都没有加上 <code>id</code>的。</li>
+</ol>
 
       
        <hr><span style="font-style: italic;color: gray;"> End </span>
