@@ -2,21 +2,21 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>小陈书屋</title>
-  <meta name="keywords" content="">
-  <meta name="description" content="小陈书屋">
+  <title>Linux安装Docker并部署青龙 | 小陈书屋</title>
+  <meta name="keywords" content=" Docker ">
+  <meta name="description" content="Linux安装Docker并部署青龙 | 小陈书屋">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="有时候我觉得我大概生活在一个撕裂的世界里。 这个世界在极力宣扬两种东西，一种是精英中的精英，他们把这种金钱，天赋堆砌起来的人生，称为奋斗的结果。 另一种是底层中的底层，生活永远处在世界边缘的人，他们把这种病痛，不幸，残忍的人生，称为任劳任怨，自强不息。 说实话打字到这里我就已经笑了，那么哪一类人被彻底忽略呢。 话说那么多没啥意思，我也懒得去管他们是什么意思，这个世界在我看来就是有毛病。 要求精神病">
+<meta name="description" content="安装PC端DockerPC端Docker下载 说明：这里是X64的安装包，非X64请自行前往官网下载对应版本。 下载完成后，安装过程一直点击下一步就可以。 安装完成后启动可能会报错提示：WSL2缺失。 这里提供WSL2的下载地址：WSL2下载 WSL2下载完成后，点击Docker对话框的Restart就安装完成了。 创建映射文件在想要安装容器的盘内创建一个新的文件夹，并命名为Docker。 在Do">
 <meta property="og:type" content="article">
-<meta property="og:title" content="且摆烂吧">
-<meta property="og:url" content="https://cyblh.github.io/2022/04/13/4/index.html">
+<meta property="og:title" content="Windows搭建青龙容器">
+<meta property="og:url" content="https://cyblh.github.io/2023/10/26/3/index.html">
 <meta property="og:site_name" content="小陈书屋">
-<meta property="og:description" content="有时候我觉得我大概生活在一个撕裂的世界里。 这个世界在极力宣扬两种东西，一种是精英中的精英，他们把这种金钱，天赋堆砌起来的人生，称为奋斗的结果。 另一种是底层中的底层，生活永远处在世界边缘的人，他们把这种病痛，不幸，残忍的人生，称为任劳任怨，自强不息。 说实话打字到这里我就已经笑了，那么哪一类人被彻底忽略呢。 话说那么多没啥意思，我也懒得去管他们是什么意思，这个世界在我看来就是有毛病。 要求精神病">
+<meta property="og:description" content="安装PC端DockerPC端Docker下载 说明：这里是X64的安装包，非X64请自行前往官网下载对应版本。 下载完成后，安装过程一直点击下一步就可以。 安装完成后启动可能会报错提示：WSL2缺失。 这里提供WSL2的下载地址：WSL2下载 WSL2下载完成后，点击Docker对话框的Restart就安装完成了。 创建映射文件在想要安装容器的盘内创建一个新的文件夹，并命名为Docker。 在Do">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2022-04-13T13:31:58.000Z">
-<meta property="article:modified_time" content="2023-02-05T11:23:04.347Z">
+<meta property="article:published_time" content="2023-10-26T14:16:34.000Z">
+<meta property="article:modified_time" content="2023-02-05T11:43:32.088Z">
 <meta property="article:author" content="小陈不厉害">
-<meta property="article:tag" content="思考">
+<meta property="article:tag" content="Docker">
 <meta name="twitter:card" content="summary">
 
 
@@ -57,7 +57,7 @@
 
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/"
    class="avatar_target">
@@ -79,7 +79,7 @@
     <li>
         <div class="all active" data-rel="All">All
             
-                <small>(4)</small>
+                <small>(5)</small>
             
         </div>
     </li>
@@ -104,7 +104,7 @@
                     <div data-rel="折腾经历">
                         
                         折腾经历
-                        <small>(3)</small>
+                        <small>(4)</small>
                         
                     </div>
                     
@@ -125,8 +125,8 @@
         
     </div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="4">
-<input type="hidden" id="yelog_site_word_count" value="2.8k">
+<input type="hidden" id="yelog_site_posts_number" value="5">
+<input type="hidden" id="yelog_site_word_count" value="3.2k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -172,6 +172,10 @@
     <div class="tag-wrapper">
         
             <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>博客</a>
+            </li>
+        
+            <li class="article-tag-list-item">
                 <i class="iconfont icon-tag"></i><a>思考</a>
             </li>
         
@@ -190,36 +194,44 @@
     
     <nav id="title-list-nav">
         
-        <a  class="All 胡言乱语 "
-           href="/2022/04/13/4/"
-           data-tag="思考"
-           data-author="" >
-            <span class="post-title" title="且摆烂吧">且摆烂吧</span>
-            <span class="post-date" title="2022-04-13 21:31:58">2022/04/13</span>
-        </a>
-        
         <a  class="All 折腾经历 "
-           href="/2022/01/03/2/"
-           data-tag="QQBOT"
-           data-author="" >
-            <span class="post-title" title="sillyGirl对接QQBOT">sillyGirl对接QQBOT</span>
-            <span class="post-date" title="2022-01-03 21:16:34">2022/01/03</span>
-        </a>
-        
-        <a  class="All 折腾经历 "
-           href="/2022/01/01/1/"
-           data-tag="Docker"
-           data-author="" >
-            <span class="post-title" title="Linux安装Docker并部署青龙">Linux安装Docker并部署青龙</span>
-            <span class="post-date" title="2022-01-01 12:12:57">2022/01/01</span>
-        </a>
-        
-        <a  class="All 折腾经历 "
-           href="/2021/10/26/3/"
+           href="/2023/10/26/3/"
            data-tag="Docker"
            data-author="" >
             <span class="post-title" title="Windows搭建青龙容器">Windows搭建青龙容器</span>
-            <span class="post-date" title="2021-10-26 22:16:34">2021/10/26</span>
+            <span class="post-date" title="2023-10-26 22:16:34">2023/10/26</span>
+        </a>
+        
+        <a  class="All 胡言乱语 "
+           href="/2023/01/13/4/"
+           data-tag="思考"
+           data-author="" >
+            <span class="post-title" title="且摆烂吧">且摆烂吧</span>
+            <span class="post-date" title="2023-01-13 21:31:58">2023/01/13</span>
+        </a>
+        
+        <a  class="All 折腾经历 "
+           href="/2023/01/05/5/"
+           data-tag="博客"
+           data-author="" >
+            <span class="post-title" title="为博客添加恋爱计时">为博客添加恋爱计时</span>
+            <span class="post-date" title="2023-01-05 19:44:08">2023/01/05</span>
+        </a>
+        
+        <a  class="All 折腾经历 "
+           href="/2023/01/03/2/"
+           data-tag="QQBOT"
+           data-author="" >
+            <span class="post-title" title="sillyGirl对接QQBOT">sillyGirl对接QQBOT</span>
+            <span class="post-date" title="2023-01-03 21:16:34">2023/01/03</span>
+        </a>
+        
+        <a  class="All 折腾经历 "
+           href="/2023/01/01/1/"
+           data-tag="Docker"
+           data-author="" >
+            <span class="post-title" title="Linux安装Docker并部署青龙">Linux安装Docker并部署青龙</span>
+            <span class="post-date" title="2023-01-01 12:12:57">2023/01/01</span>
         </a>
         
         <div id="no-item-tips">
@@ -238,12 +250,60 @@
         </div>
     </div>
 </aside>
-<div id="post" class="index">
+<div id="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-1" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Why-the-Blog"><span class="toc-text">Why the Blog</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%B0%E5%BD%95%E4%B8%80%E4%B8%AA%E6%95%85%E4%BA%8B"><span class="toc-text">记录一个故事</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E4%BA%AB%E4%B8%80%E6%AE%B5%E5%8E%86%E7%A8%8B"><span class="toc-text">分享一段历程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93%E4%B8%80%E6%9D%A1%E7%BB%8F%E9%AA%8C"><span class="toc-text">总结一条经验</span></a></li></ol></li></ol>
+        <h1 class="article-title">Linux安装Docker并部署青龙</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="折腾经历">折腾经历</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color2">Docker</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+            Created At : <time class="date" title='Updated At: 2023-02-05 19:43:16'>2023-01-01 12:12</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>Count:299</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            Views 👀 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85Docker"><span class="toc-text">安装Docker</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%92%E9%BE%99%E9%83%A8%E7%BD%B2"><span class="toc-text">青龙部署</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -256,19 +316,86 @@
     }
 </style>
 </div>
-            <h1 id="Why-the-Blog"><a href="#Why-the-Blog" class="headerlink" title="Why the Blog"></a>Why the Blog</h1><h2 id="记录一个故事"><a href="#记录一个故事" class="headerlink" title="记录一个故事"></a>记录一个故事</h2><p>在生活中总会遇到一些故事，或精彩与否，或自己或他人的。</p>
-<p>故事零零散散，</p>
-<p>但不论故事大大小小，总之值得记录。</p>
-<h2 id="分享一段历程"><a href="#分享一段历程" class="headerlink" title="分享一段历程"></a>分享一段历程</h2><p>在成长路上总会有各种各样的经历，无论是闲暇之余的一次邂逅，</p>
-<p>或是学习知识中的一次经历，亦或实践操作中遇到的各种麻烦。</p>
-<p>这些历程不仅仅是分享，更多是回忆。</p>
-<h2 id="总结一条经验"><a href="#总结一条经验" class="headerlink" title="总结一条经验"></a>总结一条经验</h2><p>在攻略某些困难的时候，总会遇到许许多多的问题。</p>
-<p>有时候碰到一些小问题可能都会手忙脚乱。</p>
-<p>将解决问题的经验总结于此，希望有所启发。</p>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="安装Docker"><a href="#安装Docker" class="headerlink" title="安装Docker"></a>安装Docker</h2><p>1.更新yum包</p>
+<pre><code>yum -y update
+</code></pre>
+<p>2.检测yum-utils状态</p>
+<pre><code>yum list installed | grep yum-utils
+</code></pre>
+<p>3.设置yum源：</p>
+<pre><code>sudo yum-config-manager \
+    --add-repo \
+    https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
+</code></pre>
+<p>4.安卓Docker Engine，验证是否安装成功，并启动</p>
+<pre><code>yum install -y docker-ce docker-ce-cli containerd.io  #第一条命令
 
-        </article>
-        
-        
+docker -v  #第二条命令
+
+systemctl start docker  #第三条命令
+</code></pre>
+<p>5.修改下载源，不修改会导致下载速度很慢</p>
+<pre><code>sudo mkdir -p /etc/docker
+sudo tee /etc/docker/daemon.json &lt;&lt;-&#39;EOF&#39;
+&#123;
+  &quot;registry-mirrors&quot;: [&quot;https://plut5gv2.mirror.aliyuncs.com&quot;]
+&#125;
+EOF
+sudo systemctl daemon-reload
+sudo systemctl restart docker
+</code></pre>
+<h2 id="青龙部署"><a href="#青龙部署" class="headerlink" title="青龙部署"></a>青龙部署</h2><p>1.拉取镜像，这里提供两个版本。</p>
+<pre><code>官方镜像：docker pull whyour/qinglong:latest
+
+个人备份：docker pull cyblh/qinglong:latest  #官方2.10.13版本
+</code></pre>
+<p>2.命令部署</p>
+<p>官方镜像</p>
+<pre><code>docker run -dit \
+   -v $PWD/ql/config:/ql/config \
+   -v $PWD/ql/log:/ql/log \
+   -v $PWD/ql/db:/ql/db \
+   -p 5700:5700 \
+   --name qinglong \
+   --hostname qinglong \
+   --restart always \
+   whyour/qinglong:latest
+</code></pre>
+<p>备份镜像</p>
+<pre><code>docker run -dit \
+-v $pwd/ql/config:/ql/config \
+-v $pwd/ql/log:/ql/log \
+-v $pwd/ql/db:/ql/db \
+-v $pwd/ql/scripts:/ql/scripts \
+-p 5700:5700 \
+-e ENABLE_HANGUP=true \
+-e ENABLE_WEB_PANEL=true \
+--name qinglong \
+--hostname qinglong \
+--restart always \
+cyblh/qinglong:latest
+</code></pre>
+<p><em>说明：冒号前为本地映射出来的文件，可以更改。</em></p>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> End </span>
+    </div>
+</article>
+
+
+
+
+
+
+
+    
+
+
+
+
     </div>
     <div class="copyright">
         <p class="footer-entry">
@@ -276,11 +403,11 @@
 </p>
 
     </div>
-</div>
-<div class="full-toc">
-    <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
 <a class="" id="rocket" ></a>
 
+    </div>
 </div>
 
 </body>
