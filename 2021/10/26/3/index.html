@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Linux安装Docker并部署青龙 | 小陈书屋</title>
+  <title>Windows搭建青龙容器 | 小陈书屋</title>
   <meta name="keywords" content=" Docker ">
-  <meta name="description" content="Linux安装Docker并部署青龙 | 小陈书屋">
+  <meta name="description" content="Windows搭建青龙容器 | 小陈书屋">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="有时候我觉得我大概生活在一个撕裂的世界里。 这个世界在极力宣扬两种东西，一种是精英中的精英，他们把这种金钱，天赋堆砌起来的人生，称为奋斗的结果。 另一种是底层中的底层，生活永远处在世界边缘的人，他们把这种病痛，不幸，残忍的人生，称为任劳任怨，自强不息。 说实话打字到这里我就已经笑了，那么哪一类人被彻底忽略呢。 话说那么多没啥意思，我也懒得去管他们是什么意思，这个世界在我看来就是有毛病。 要求精神病">
 <meta property="og:type" content="article">
@@ -240,9 +240,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-1" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-3" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">Linux安装Docker并部署青龙</h1>
+        <h1 class="article-title">Windows搭建青龙容器</h1>
     
     <div class="article-meta">
         
@@ -267,12 +267,12 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2023-02-05 19:20:17'>2022-01-01 12:12</time>
+            Created At : <time class="date" title='Updated At: 2023-02-05 19:22:34'>2021-10-26 22:16</time>
         
     </div>
     <div class="article-meta">
         
-        <span>Count:299</span>
+        <span>Count:315</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -291,7 +291,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85Docker"><span class="toc-text">安装Docker</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%92%E9%BE%99%E9%83%A8%E7%BD%B2"><span class="toc-text">青龙部署</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85PC%E7%AB%AFDocker"><span class="toc-text">安装PC端Docker</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E6%98%A0%E5%B0%84%E6%96%87%E4%BB%B6"><span class="toc-text">创建映射文件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%AF%E5%8A%A8%E9%95%9C%E5%83%8F"><span class="toc-text">启动镜像</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -307,66 +307,24 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="安装Docker"><a href="#安装Docker" class="headerlink" title="安装Docker"></a>安装Docker</h2><p>1.更新yum包</p>
-<pre><code>yum -y update
+        <h2 id="安装PC端Docker"><a href="#安装PC端Docker" class="headerlink" title="安装PC端Docker"></a>安装PC端Docker</h2><p><a target="_blank" rel="noopener" href="https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe?utm_source=docker&amp;utm_medium=webreferral&amp;utm_campaign=dd-smartbutton&amp;utm_location=module">PC端Docker下载</a> <em>说明：这里是X64的安装包，非X64请自行前往官网下载对应版本。</em></p>
+<p>下载完成后，安装过程一直点击下一步就可以。</p>
+<p>安装完成后启动可能会报错提示：WSL2缺失。</p>
+<p>这里提供WSL2的下载地址：<a target="_blank" rel="noopener" href="https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi">WSL2下载</a></p>
+<p>WSL2下载完成后，点击Docker对话框的Restart就安装完成了。</p>
+<h2 id="创建映射文件"><a href="#创建映射文件" class="headerlink" title="创建映射文件"></a>创建映射文件</h2><p>在想要安装容器的盘内创建一个新的文件夹，并命名为Docker。</p>
+<p>在Docker文件夹下创建ql文件夹。</p>
+<p>在ql文件夹下依次创建如下文件夹。</p>
+<p>config、log、db、repo、raw、scripts</p>
+<p>这六个文件夹创建完成后，打开cmd窗口执行如下命令。（以D盘为例）</p>
+<pre><code>D:\
+cd Docker
+docker run -dit -v D:/Docker/ql/config:/ql/config -v D:/Docker/ql/log:/ql/log -v D:/Docker/ql/db:/ql/db -v D:/Docker/ql/repo:/ql/repo -v D:/Docker/ql/raw:/ql/raw -v D:/Docker/ql/scripts:/ql/scripts -p 5700:5700 --name qinglong --hostname qinglong -e TZ=Asia/Shanghai --restart unless-stopped whyour/qinglong:latest
 </code></pre>
-<p>2.检测yum-utils状态</p>
-<pre><code>yum list installed | grep yum-utils
-</code></pre>
-<p>3.设置yum源：</p>
-<pre><code>sudo yum-config-manager \
-    --add-repo \
-    https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
-</code></pre>
-<p>4.安卓Docker Engine，验证是否安装成功，并启动</p>
-<pre><code>yum install -y docker-ce docker-ce-cli containerd.io  #第一条命令
-
-docker -v  #第二条命令
-
-systemctl start docker  #第三条命令
-</code></pre>
-<p>5.修改下载源，不修改会导致下载速度很慢</p>
-<pre><code>sudo mkdir -p /etc/docker
-sudo tee /etc/docker/daemon.json &lt;&lt;-&#39;EOF&#39;
-&#123;
-  &quot;registry-mirrors&quot;: [&quot;https://plut5gv2.mirror.aliyuncs.com&quot;]
-&#125;
-EOF
-sudo systemctl daemon-reload
-sudo systemctl restart docker
-</code></pre>
-<h2 id="青龙部署"><a href="#青龙部署" class="headerlink" title="青龙部署"></a>青龙部署</h2><p>1.拉取镜像，这里提供两个版本。</p>
-<pre><code>官方镜像：docker pull whyour/qinglong:latest
-
-个人备份：docker pull cyblh/qinglong:latest  #官方2.10.13版本
-</code></pre>
-<p>2.命令部署</p>
-<p>官方镜像</p>
-<pre><code>docker run -dit \
-   -v $PWD/ql/config:/ql/config \
-   -v $PWD/ql/log:/ql/log \
-   -v $PWD/ql/db:/ql/db \
-   -p 5700:5700 \
-   --name qinglong \
-   --hostname qinglong \
-   --restart always \
-   whyour/qinglong:latest
-</code></pre>
-<p>备份镜像</p>
-<pre><code>docker run -dit \
--v $pwd/ql/config:/ql/config \
--v $pwd/ql/log:/ql/log \
--v $pwd/ql/db:/ql/db \
--v $pwd/ql/scripts:/ql/scripts \
--p 5700:5700 \
--e ENABLE_HANGUP=true \
--e ENABLE_WEB_PANEL=true \
---name qinglong \
---hostname qinglong \
---restart always \
-cyblh/qinglong:latest
-</code></pre>
-<p><em>说明：冒号前为本地映射出来的文件，可以更改。</em></p>
+<p>执行命令后会自动下载镜像，并启动。</p>
+<p>在Docker程序中可以看到创建的镜像。</p>
+<h3 id="启动镜像"><a href="#启动镜像" class="headerlink" title="启动镜像"></a>启动镜像</h3><p>在Docker中可以停止、启动镜像。</p>
+<p>启动后访问<a target="_blank" rel="noopener" href="http://localhost:5700/">http://localhost:5700</a> 即可访问创建的服务。</p>
 
       
        <hr><span style="font-style: italic;color: gray;"> End </span>

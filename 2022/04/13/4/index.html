@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Linux安装Docker并部署青龙 | 小陈书屋</title>
-  <meta name="keywords" content=" Docker ">
-  <meta name="description" content="Linux安装Docker并部署青龙 | 小陈书屋">
+  <title>且摆烂吧 | 小陈书屋</title>
+  <meta name="keywords" content=" 思考 ">
+  <meta name="description" content="且摆烂吧 | 小陈书屋">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="有时候我觉得我大概生活在一个撕裂的世界里。 这个世界在极力宣扬两种东西，一种是精英中的精英，他们把这种金钱，天赋堆砌起来的人生，称为奋斗的结果。 另一种是底层中的底层，生活永远处在世界边缘的人，他们把这种病痛，不幸，残忍的人生，称为任劳任怨，自强不息。 说实话打字到这里我就已经笑了，那么哪一类人被彻底忽略呢。 话说那么多没啥意思，我也懒得去管他们是什么意思，这个世界在我看来就是有毛病。 要求精神病">
 <meta property="og:type" content="article">
@@ -240,9 +240,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-1" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-4" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">Linux安装Docker并部署青龙</h1>
+        <h1 class="article-title">且摆烂吧</h1>
     
     <div class="article-meta">
         
@@ -252,7 +252,7 @@
             <i class="iconfont icon-category"></i>
             
             
-            <a  data-rel="折腾经历">折腾经历</a>
+            <a  data-rel="胡言乱语">胡言乱语</a>
             
         </span>
         
@@ -260,19 +260,19 @@
         <span class="tag">
             <i class="iconfont icon-tag"></i>
             
-            <a class="color2">Docker</a>
+            <a class="color3">思考</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2023-02-05 19:20:17'>2022-01-01 12:12</time>
+            Created At : <time class="date" title='Updated At: 2023-02-05 19:23:04'>2022-04-13 21:31</time>
         
     </div>
     <div class="article-meta">
         
-        <span>Count:299</span>
+        <span>Count:1.5k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -291,7 +291,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85Docker"><span class="toc-text">安装Docker</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%92%E9%BE%99%E9%83%A8%E7%BD%B2"><span class="toc-text">青龙部署</span></a></li></ol>
+        
     
 <style>
     .left-col .switch-btn,
@@ -307,66 +307,51 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="安装Docker"><a href="#安装Docker" class="headerlink" title="安装Docker"></a>安装Docker</h2><p>1.更新yum包</p>
-<pre><code>yum -y update
-</code></pre>
-<p>2.检测yum-utils状态</p>
-<pre><code>yum list installed | grep yum-utils
-</code></pre>
-<p>3.设置yum源：</p>
-<pre><code>sudo yum-config-manager \
-    --add-repo \
-    https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
-</code></pre>
-<p>4.安卓Docker Engine，验证是否安装成功，并启动</p>
-<pre><code>yum install -y docker-ce docker-ce-cli containerd.io  #第一条命令
-
-docker -v  #第二条命令
-
-systemctl start docker  #第三条命令
-</code></pre>
-<p>5.修改下载源，不修改会导致下载速度很慢</p>
-<pre><code>sudo mkdir -p /etc/docker
-sudo tee /etc/docker/daemon.json &lt;&lt;-&#39;EOF&#39;
-&#123;
-  &quot;registry-mirrors&quot;: [&quot;https://plut5gv2.mirror.aliyuncs.com&quot;]
-&#125;
-EOF
-sudo systemctl daemon-reload
-sudo systemctl restart docker
-</code></pre>
-<h2 id="青龙部署"><a href="#青龙部署" class="headerlink" title="青龙部署"></a>青龙部署</h2><p>1.拉取镜像，这里提供两个版本。</p>
-<pre><code>官方镜像：docker pull whyour/qinglong:latest
-
-个人备份：docker pull cyblh/qinglong:latest  #官方2.10.13版本
-</code></pre>
-<p>2.命令部署</p>
-<p>官方镜像</p>
-<pre><code>docker run -dit \
-   -v $PWD/ql/config:/ql/config \
-   -v $PWD/ql/log:/ql/log \
-   -v $PWD/ql/db:/ql/db \
-   -p 5700:5700 \
-   --name qinglong \
-   --hostname qinglong \
-   --restart always \
-   whyour/qinglong:latest
-</code></pre>
-<p>备份镜像</p>
-<pre><code>docker run -dit \
--v $pwd/ql/config:/ql/config \
--v $pwd/ql/log:/ql/log \
--v $pwd/ql/db:/ql/db \
--v $pwd/ql/scripts:/ql/scripts \
--p 5700:5700 \
--e ENABLE_HANGUP=true \
--e ENABLE_WEB_PANEL=true \
---name qinglong \
---hostname qinglong \
---restart always \
-cyblh/qinglong:latest
-</code></pre>
-<p><em>说明：冒号前为本地映射出来的文件，可以更改。</em></p>
+        <p>有时候我觉得我大概生活在一个撕裂的世界里。</p>
+<p>这个世界在极力宣扬两种东西，一种是精英中的精英，他们把这种金钱，天赋堆砌起来的人生，称为奋斗的结果。</p>
+<p>另一种是底层中的底层，生活永远处在世界边缘的人，他们把这种病痛，不幸，残忍的人生，称为<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E4%BB%BB%E5%8A%B3%E4%BB%BB%E6%80%A8&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22answer%22,%22sourceId%22:2433451098%7D">任劳任怨</a>，自强不息。</p>
+<p>说实话打字到这里我就已经笑了，那么哪一类人被彻底忽略呢。</p>
+<p>话说那么多没啥意思，我也懒得去管他们是什么意思，这个世界在我看来就是有毛病。</p>
+<p>要求精神病正常起来，要求正常人努力起来，要求努力的人拼命起来。</p>
+<p>但我偏不拼命，我更不努力，父母的期望我一把甩开，直接不孝子孙的帽子戴头上，望子成龙是不可能的，我注定是族谱上的大肥蛀虫，周围人的目光我从来不看，那些风言风语我比他们更加会说。</p>
+<p>我就是要躺着，不想运动的时候我就想躺在床上，像抽大烟似的玩手机，玩的飞起。我还不看什么知识，任何陶冶情操的我都不看，我就爱看那些鸡毛蒜皮的乐事儿，段子，或者跑知乎看大家吵架。</p>
+<p>什么光宗耀祖，不存在的。祖宗从坟里气的诈尸，我都能请茅山道士给他按下去，谁都不能阻止我摆烂。</p>
+<p>创造价值，我没有任何价值，如果有人指望我拖着一百多斤的肉跑去做贡献，那是绝对不可能的，肉是我自己吃出来的，我凭什么拿它去做消耗。</p>
+<p>消耗掉的斤数，能给我换成同斤数的百元大钞吗。</p>
+<p>我宁愿像浪里白条似的，在水塘里露着肚皮打滚。</p>
+<p>我的人生追求只限于挣的钱够活，你别告诉我什么我应该努力奋斗，避免将来出现的风险，因为我巴不得我早点死。</p>
+<p>至于所谓的父母将来得了重病怎么办，这个问题该我去思考吗。如果在这天下，所有百姓因为重病而无法医治，该去思考的人不去思考，甚至都需要归咎于小家庭本身。</p>
+<p>甚至都要用这个残忍的假设，来鼓吹内卷的目的性和必要性，然后用危机观念逼着所有人一起卷。</p>
+<p>那我思考个屁。</p>
+<p>我只能选择碰运气，毕竟投胎这种事不也是碰运气吗。</p>
+<p>在这有限的生命里我就是要快活，富人有富人的快活，而我有贫瘠的快活。我才不会去管什么传统美德，谁愿意俯身甘为孺子牛谁就去，因为我就是那嗡嗡喳喳的牛氓。</p>
+<p>我快活的时候，还不会去管别个快不快活。</p>
+<p>我可以躺在床上，一天到晚都不动一下，抽着廉价的烟，或者是在大热天吃个冰棍。夏蝉叫起来的时候，我会穿着人字拖，背心儿，到处溜达，对着小孩子吹口哨，或者是拿着蒲扇去下象棋。</p>
+<p>我没有羞耻心，同学，朋友，周围人，他们到达了何种阶级，多少财富，不感兴趣，关我屁事。</p>
+<p>在我眼里，比老子富的都是压迫我的，我就是这么不讲道理，我就是个刁民。谁想怪我，我就问一句话，共同富裕谁当年说的。</p>
+<p>侧着身子躺下，瞪着眼睛盯着手机屏幕上的画面，跟个傻子似的呵呵直笑，这就是我的模样。</p>
+<p>有些女人称呼我为劣质吊丝，有些男人称呼我为乡下农民，还有些高高在上的人，把我叫作社会蛀虫，懒汉，称我这种人阻碍了社会发展。</p>
+<p>如果我真的阻碍了所有人通向全民小康的步伐，那么好，来把我杀了吧。</p>
+<p>来把我高高吊起，拿我的脑袋来祭旗。</p>
+<p>我无所谓啊，我只会哈哈大笑，在空中摇来摇去，即便我被绑的跟粽子似的。</p>
+<p>我不会有孩子，因为我没有成为父亲的能力。我也许会做梦，梦到那个一辈子注定不会出现的小小身影。</p>
+<p>但我只能轻轻抱住他，告诉他我做不到。</p>
+<p>我做不到像一头老牛那样，沉默且痛苦。我做不到以泪和血，来在贫瘠的土地上匍匐前行。我也做不到把这个完全无辜的孩子，放置于这个残酷的世界上。</p>
+<p>因为我知道，当他被冠以我的姓氏时，人生他已经输了一半。</p>
+<p>所以，什么都不想了，什么都不再去执着。</p>
+<p>这个世界上的是非对错，我已经不再关心。那些幻想当中的美好事物，我知道它们永远也不会出现。</p>
+<p>但我从来不觉得自己渺小，我只是在以尽可能快乐的方式而活着。</p>
+<p>我就是沙子做的人，在山上奔跑，风一吹，我的血肉就飘散了。</p>
+<p>那么还说什么呢，有人会看见吗，有人会看见我心里的火吗。</p>
+<p>我既是顽石，也可为星火。</p>
+<p>而燃烧起来的那一天，是什么时候呢，又会有那么一天吗。</p>
+<p>也许永远不会有那么一天，我的一生也终究被定义成精神病，当苦难和贫穷的故事画上句点，我遍布伤痕的骨骼也终被风化。</p>
+<p>那就让一切随风吧。</p>
+<p>让整片大地上所有的灰烬，一起随风飞起来吧，飞的高高的，飞向那遥远的天际。</p>
+<p>飞过几千年的时间，飞过诸子百家，飞过王朝更迭，飞过兴百姓苦，亡百姓苦。</p>
+<p>飞过一切的眼泪和痛苦，最后留在那布满老茧的手上。</p>
+<p>这是谁的手。</p>
+<p>这是人民的手。</p>
 
       
        <hr><span style="font-style: italic;color: gray;"> End </span>

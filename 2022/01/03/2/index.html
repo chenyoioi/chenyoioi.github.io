@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Linux安装Docker并部署青龙 | 小陈书屋</title>
-  <meta name="keywords" content=" Docker ">
-  <meta name="description" content="Linux安装Docker并部署青龙 | 小陈书屋">
+  <title>sillyGirl对接QQBOT | 小陈书屋</title>
+  <meta name="keywords" content=" QQBOT ">
+  <meta name="description" content="sillyGirl对接QQBOT | 小陈书屋">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="有时候我觉得我大概生活在一个撕裂的世界里。 这个世界在极力宣扬两种东西，一种是精英中的精英，他们把这种金钱，天赋堆砌起来的人生，称为奋斗的结果。 另一种是底层中的底层，生活永远处在世界边缘的人，他们把这种病痛，不幸，残忍的人生，称为任劳任怨，自强不息。 说实话打字到这里我就已经笑了，那么哪一类人被彻底忽略呢。 话说那么多没啥意思，我也懒得去管他们是什么意思，这个世界在我看来就是有毛病。 要求精神病">
 <meta property="og:type" content="article">
@@ -240,9 +240,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-1" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-2" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">Linux安装Docker并部署青龙</h1>
+        <h1 class="article-title">sillyGirl对接QQBOT</h1>
     
     <div class="article-meta">
         
@@ -260,19 +260,19 @@
         <span class="tag">
             <i class="iconfont icon-tag"></i>
             
-            <a class="color2">Docker</a>
+            <a class="color1">QQBOT</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2023-02-05 19:20:17'>2022-01-01 12:12</time>
+            Created At : <time class="date" title='Updated At: 2023-02-05 19:17:36'>2022-01-03 21:16</time>
         
     </div>
     <div class="article-meta">
         
-        <span>Count:299</span>
+        <span>Count:636</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -291,7 +291,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85Docker"><span class="toc-text">安装Docker</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%92%E9%BE%99%E9%83%A8%E7%BD%B2"><span class="toc-text">青龙部署</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#sillyGirl%E5%AE%89%E8%A3%85"><span class="toc-text">sillyGirl安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%B9%E6%8E%A5Node-Onebot"><span class="toc-text">对接Node-Onebot</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PM2%E7%9A%84%E5%AE%89%E8%A3%85"><span class="toc-text">PM2的安装</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -307,66 +307,95 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="安装Docker"><a href="#安装Docker" class="headerlink" title="安装Docker"></a>安装Docker</h2><p>1.更新yum包</p>
-<pre><code>yum -y update
+        <h2 id="sillyGirl安装"><a href="#sillyGirl安装" class="headerlink" title="sillyGirl安装"></a>sillyGirl安装</h2><p>一键命令：</p>
+<pre><code>bash &lt;(curl -sSL http://app.imdraw.com/install.sh)
 </code></pre>
-<p>2.检测yum-utils状态</p>
-<pre><code>yum list installed | grep yum-utils
+<p>一键命令如不可用，请下载文末附件</p>
+<p>Continue~</p>
+<h2 id="对接Node-Onebot"><a href="#对接Node-Onebot" class="headerlink" title="对接Node-Onebot"></a>对接Node-Onebot</h2><p>1.一次性清除占用80端口的应用</p>
+<pre><code>lsof -i :80|grep -v &quot;PID&quot;|awk &#39;&#123;print &quot;kill -9&quot;,$2&#125;&#39;|sh
 </code></pre>
-<p>3.设置yum源：</p>
-<pre><code>sudo yum-config-manager \
-    --add-repo \
-    https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
+<p>2.安装Node.js</p>
+<pre><code>mkdir nodejs &amp;&amp; cd nodejs &amp;&amp; wget https://nodejs.org/dist/v16.13.1/node-v16.13.1-linux-x64.tar.xz
 </code></pre>
-<p>4.安卓Docker Engine，验证是否安装成功，并启动</p>
-<pre><code>yum install -y docker-ce docker-ce-cli containerd.io  #第一条命令
-
-docker -v  #第二条命令
-
-systemctl start docker  #第三条命令
+<p>3.解压并安装</p>
+<pre><code>xz -d node-v16.13.1-linux-x64.tar.xz  
+tar -xvf node-v16.13.1-linux-x64.tar  #与上面分开执行
 </code></pre>
-<p>5.修改下载源，不修改会导致下载速度很慢</p>
-<pre><code>sudo mkdir -p /etc/docker
-sudo tee /etc/docker/daemon.json &lt;&lt;-&#39;EOF&#39;
-&#123;
-  &quot;registry-mirrors&quot;: [&quot;https://plut5gv2.mirror.aliyuncs.com&quot;]
-&#125;
-EOF
-sudo systemctl daemon-reload
-sudo systemctl restart docker
+<p>4.配置环境变量</p>
+<pre><code>vi /etc/profile  #打开配置文件
+#复制下面两行到配置文件里
+export NODEJS_HOME=/root/nodejs/node-v16.13.1-linux-x64
+export PATH=$PATH:$NODEJS_HOME/bin
 </code></pre>
-<h2 id="青龙部署"><a href="#青龙部署" class="headerlink" title="青龙部署"></a>青龙部署</h2><p>1.拉取镜像，这里提供两个版本。</p>
-<pre><code>官方镜像：docker pull whyour/qinglong:latest
-
-个人备份：docker pull cyblh/qinglong:latest  #官方2.10.13版本
+<p>5.使环境变量生效并检查</p>
+<pre><code>source /etc/profile
+node -v  #与上面分开执行
 </code></pre>
-<p>2.命令部署</p>
-<p>官方镜像</p>
-<pre><code>docker run -dit \
-   -v $PWD/ql/config:/ql/config \
-   -v $PWD/ql/log:/ql/log \
-   -v $PWD/ql/db:/ql/db \
-   -p 5700:5700 \
-   --name qinglong \
-   --hostname qinglong \
-   --restart always \
-   whyour/qinglong:latest
+<p>6.拉取Onebot</p>
+<pre><code>git clone https://github.com/takayama-lily/node-onebot.git
+cd node-onebot &amp;&amp; cp config.sample.js config.js  #与上面分开执行
 </code></pre>
-<p>备份镜像</p>
-<pre><code>docker run -dit \
--v $pwd/ql/config:/ql/config \
--v $pwd/ql/log:/ql/log \
--v $pwd/ql/db:/ql/db \
--v $pwd/ql/scripts:/ql/scripts \
--p 5700:5700 \
--e ENABLE_HANGUP=true \
--e ENABLE_WEB_PANEL=true \
---name qinglong \
---hostname qinglong \
---restart always \
-cyblh/qinglong:latest
+<p>7.修改config.js</p>
+<p>模板</p>
+<pre><code>&quot;use strict&quot;;
+// 将此文件更名为config.js才能生效哦
+module.exports = &#123;
+    //通用配置
+    general: &#123;
+        platform:           1,      //1:安卓手机 2:aPad 3:安卓手表 4:MacOS 5:iPad
+        debug:              false,  //开启debug
+        use_cqhttp_notice:  true,   //是否使用cqhttp标准的notice事件格式
+        host:               &quot;localhost&quot;,  //监听主机名
+        port:               5700,       //端口
+        use_http:           false,      //启用http
+        use_ws:             false,      //启用正向ws，和http使用相同地址和端口
+        access_token:       &quot;&quot;,         //访问api的token
+        secret:             &quot;&quot;,         //上报数据的sha1签名密钥
+        post_timeout:       30,         //post超时时间(秒)
+        post_message_format:&quot;array&quot;,    //&quot;string&quot;或&quot;array&quot;
+        enable_cors:        false,      //是否允许跨域请求
+        enable_heartbeat:   false,      //是否启用ws心跳
+        heartbeat_interval: 15000,      //ws心跳间隔(毫秒)
+        rate_limit_interval:500,        //使用_rate_limited后缀限速调用api的排队间隔时间(毫秒)
+        event_filter:       &quot;&quot;,         //json格式的事件过滤器文件路径
+        post_url: [ //上报地址，可以添加多个url
+            // &quot;http://your.address.com:80&quot;,
+        ],
+        ws_reverse_url: [ //反向ws地址，可以添加多个url
+            &quot;ws://localhost:8080/qq/receive&quot;,
+        ],
+        ws_reverse_reconnect_interval: 3000, //反向ws断线重连间隔(毫秒)，设为负数直接不重连
+        ws_reverse_reconnect_on_code_1000: true, //反向ws是否在关闭状态码为1000的时候重连
+    &#125;,
+    //每个账号的单独配置(用于覆盖通用配置)
+    123456789: &#123;
+    &#125;,
+&#125;;
 </code></pre>
-<p><em>说明：冒号前为本地映射出来的文件，可以更改。</em></p>
+<p>8.启动Onrbot</p>
+<pre><code>node main QQ号
+</code></pre>
+<p>9.使用PM2驻守</p>
+<pre><code>pm2 start &quot;node main QQ号&quot;
+</code></pre>
+<p>Continue~</p>
+<h2 id="PM2的安装"><a href="#PM2的安装" class="headerlink" title="PM2的安装"></a>PM2的安装</h2><p>1.全局安装</p>
+<pre><code>npm install pm2 -g
+</code></pre>
+<p>2.</p>
+<p>设置软连接</p>
+<pre><code>ln -sf /usr/node/bin/pm2 /usr/local/bin/
+</code></pre>
+<p>3.查看进程</p>
+<pre><code>pm2 list 
+</code></pre>
+<p>附件：</p>
+<p><a target="_blank" rel="noopener" href="https://cyblh.lanzoum.com/ifzWJ0mp2i8b">sillyGirl</a>  <em>说明：root开头文件解压后放于root目录</em></p>
+<p><a target="_blank" rel="noopener" href="https://cyblh.lanzoum.com/ioOqv0mp2meb">Onebot</a>  <em>说明：文件解压后放于root目录。</em></p>
+<blockquote>
+<p>如有解压密码，即cyblh</p>
+</blockquote>
 
       
        <hr><span style="font-style: italic;color: gray;"> End </span>
