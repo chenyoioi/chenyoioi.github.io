@@ -4,23 +4,23 @@
   
     
     <entry>
-      <title>Windows搭建青龙容器</title>
-      <link href="/2023/10/26/3/"/>
-      <url>/2023/10/26/3/</url>
+      <title>学习才能强国</title>
+      <link href="/2023/02/11/6/"/>
+      <url>/2023/02/11/6/</url>
       
-        <content type="html"><![CDATA[<h2 id="安装PC端Docker"><a href="#安装PC端Docker" class="headerlink" title="安装PC端Docker"></a>安装PC端Docker</h2><p><a href="https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe?utm_source=docker&amp;utm_medium=webreferral&amp;utm_campaign=dd-smartbutton&amp;utm_location=module">PC端Docker下载</a> <em>说明：这里是X64的安装包，非X64请自行前往官网下载对应版本。</em></p><p>下载完成后，安装过程一直点击下一步就可以。</p><p>安装完成后启动可能会报错提示：WSL2缺失。</p><p>这里提供WSL2的下载地址：<a href="https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi">WSL2下载</a></p><p>WSL2下载完成后，点击Docker对话框的Restart就安装完成了。</p><h2 id="创建映射文件"><a href="#创建映射文件" class="headerlink" title="创建映射文件"></a>创建映射文件</h2><p>在想要安装容器的盘内创建一个新的文件夹，并命名为Docker。</p><p>在Docker文件夹下创建ql文件夹。</p><p>在ql文件夹下依次创建如下文件夹。</p><p>config、log、db、repo、raw、scripts</p><p>这六个文件夹创建完成后，打开cmd窗口执行如下命令。（以D盘为例）</p><pre><code>D:\cd Dockerdocker run -dit -v D:/Docker/ql/config:/ql/config -v D:/Docker/ql/log:/ql/log -v D:/Docker/ql/db:/ql/db -v D:/Docker/ql/repo:/ql/repo -v D:/Docker/ql/raw:/ql/raw -v D:/Docker/ql/scripts:/ql/scripts -p 5700:5700 --name qinglong --hostname qinglong -e TZ=Asia/Shanghai --restart unless-stopped whyour/qinglong:latest</code></pre><p>执行命令后会自动下载镜像，并启动。</p><p>在Docker程序中可以看到创建的镜像。</p><h3 id="启动镜像"><a href="#启动镜像" class="headerlink" title="启动镜像"></a>启动镜像</h3><p>在Docker中可以停止、启动镜像。</p><p>启动后访问<a href="http://localhost:5700/">http://localhost:5700</a> 即可访问创建的服务。</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="服务器部署"><a href="#服务器部署" class="headerlink" title="服务器部署"></a>服务器部署</h2><h3 id="拉取镜像"><a href="#拉取镜像" class="headerlink" title="拉取镜像"></a>拉取镜像</h3><pre><code>docker pull registry.cn-hangzhou.aliyuncs.com/cyblh/xxqg:1.0</code></pre><h3 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h3><pre><code>docker run \--name study_xxqg \-d \-p 1234:8080 \-v /etc/study_xxqg/:/opt/config/ \registry.cn-hangzhou.aliyuncs.com/cyblh/xxqg:1.0</code></pre><p><strong>含义如下</strong></p><ul><li><strong>—name 表示名字 ,名字是 study_xxqg</strong></li><li><strong>-d 表示后台运行</strong></li><li><strong>-p 1234:8080 表示将 容器内部的 8080 端口映射到主机的 1234 端口</strong></li><li><strong>-v /etc/study_xxqg/:/opt/config/ 表示将 本机的</strong> <code>/etc/study_xxqg/</code> 映射到 docker 镜像的 <code>/opt/config/</code> 下</li><li><strong>registry.cn-hangzhou.aliyuncs.com/wxyhgk/xxgq:1.0 表示拉取这个镜像</strong></li></ul><h3 id="设置自动重启"><a href="#设置自动重启" class="headerlink" title="设置自动重启"></a>设置自动重启</h3><pre><code>docker update --restart=always study_xxqg</code></pre><h2 id="面板配置"><a href="#面板配置" class="headerlink" title="面板配置"></a>面板配置</h2><p><strong>部署完成后到浏览器访问</strong> <code>ip:1234</code> 查看，如下图即成功。</p><p><img src="https://s1.ax1x.com/2023/02/12/pSIZA5n.png" alt=" "></p><p><strong>默认账号密码均为: admin，请先修改账号密码。</strong></p><p><img src="https://s1.ax1x.com/2023/02/12/pSIZKrF.png" alt=" "></p><p><strong>修改完成后保存设置。</strong></p><p><img src="https://s1.ax1x.com/2023/02/12/pSIZuKU.png" alt=" "></p><h2 id="微信推送"><a href="#微信推送" class="headerlink" title="微信推送"></a>微信推送</h2><h3 id="开启服务"><a href="#开启服务" class="headerlink" title="开启服务"></a>开启服务</h3><p>**登录 **<a href="http://mp.weixin.qq.com/debug/cgi-bin/sandbox?t=sandbox/login">http://mp.weixin.qq.com/debug/cgi-bin/sandbox?t=sandbox/login</a> 。</p><h3 id="开启服务-1"><a href="#开启服务-1" class="headerlink" title="开启服务"></a>开启服务</h3><p><strong>将微信这里的</strong></p><ul><li><p><strong>enable 后面的 false 改成true</strong></p></li><li><p><strong>填入一个token，最好是 10 位以上,带有****字母大小写,数字,特殊符号，</strong>填完后保存,自己记住这个 Token</p><p><img src="https://s1.ax1x.com/2023/02/12/pSIe9Rx.png" alt=" "></p></li></ul><h3 id="配置接口"><a href="#配置接口" class="headerlink" title="配置接口"></a>配置<strong>接口</strong></h3><p><img src="https://s1.ax1x.com/2023/02/12/pSIZOLF.png" alt=" "></p><ul><li>**URL填入 **<code>http://ip:1234/wx</code></li><li><strong>Token 是上面我们记录的 token</strong></li></ul><h3 id="记录测试号信息"><a href="#记录测试号信息" class="headerlink" title="记录测试号信息"></a>记录<strong>测试号信息</strong></h3><p><img src="https://s1.ax1x.com/2023/02/12/pSIZHzV.png" alt=" "></p><p>自己记录下<strong>appID</strong> 和 <strong>appsecret</strong> ,后面要用</p><h3 id="添加模板"><a href="#添加模板" class="headerlink" title="添加模板"></a>添加模板</h3><p><img src="https://s1.ax1x.com/2023/02/12/pSIZqMT.png" alt=" "></p><ul><li><strong>登录消息需要使用的消息模板</strong> 模板标题:<strong>登录</strong> 模板内容:<strong>点我登录，然后在浏览器中打开！！</strong></li></ul><p><img src="https://s1.ax1x.com/2023/02/12/pSIZLsU.png" alt=" "></p><ul><li><strong>普通消息需要使用的消息模板</strong> 模板标题:<strong>开始学习</strong> 模板内容:<strong></strong></li></ul><p><img src="https://s1.ax1x.com/2023/02/12/pSIZ7R0.png" alt=" "></p><p><strong>最后记录下对应的模板ID</strong></p><p><img src="https://s1.ax1x.com/2023/02/12/pSIZqMT.png" alt=" "></p><h3 id="后台填入"><a href="#后台填入" class="headerlink" title="后台填入"></a>后台填入</h3><p><strong>到网页端将下面的信息全部填写即可</strong></p><p><img src="https://s1.ax1x.com/2023/02/12/pSIe9Rx.png" alt=" "></p><p><strong>在配置文件中配置所有内容，****重启面板</strong></p><p>**重启运行程序后，在浏览器中访问 **<code>ip:1234/wx</code> ,页面会返回 <code>No Signature!</code>,然后提交配置，若成功则到上面说的微信测试号平台(<a href="http://mp.weixin.qq.com/debug/cgi-bin/sandbox?t=sandbox/login">点我打开</a>),关注公众号尝试运行。</p><p><img src="https://s1.ax1x.com/2023/02/12/pSIepJ1.png" alt=" "></p><h3 id="获取open-id"><a href="#获取open-id" class="headerlink" title="获取open_id"></a>获取open_id</h3><p><img src="https://s1.ax1x.com/2023/02/12/pSIeSiR.png" alt=" "></p><p>**获取 **<code>open_id</code> 之后,填入到面板后台</p><p><img src="https://s1.ax1x.com/2023/02/12/pSIZxo9.png" alt=" "></p><p><strong>填写好之后,保存,然后重启面板既可,然后就能愉快使用了。</strong></p>]]></content>
       
       
       <categories>
           
-          <category> 折腾经历 </category>
+          <category> Docker </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> Docker </tag>
+            <tag> 学习 </tag>
             
         </tags>
       
@@ -38,7 +38,7 @@
       
       <categories>
           
-          <category> 折腾经历 </category>
+          <category> 杂七杂八 </category>
           
       </categories>
       
@@ -46,6 +46,31 @@
         <tags>
             
             <tag> T投屏 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Windows搭建青龙容器</title>
+      <link href="/2023/01/26/3/"/>
+      <url>/2023/01/26/3/</url>
+      
+        <content type="html"><![CDATA[<h2 id="安装PC端Docker"><a href="#安装PC端Docker" class="headerlink" title="安装PC端Docker"></a>安装PC端Docker</h2><p><a href="https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe?utm_source=docker&amp;utm_medium=webreferral&amp;utm_campaign=dd-smartbutton&amp;utm_location=module">PC端Docker下载</a> <em>说明：这里是X64的安装包，非X64请自行前往官网下载对应版本。</em></p><p>下载完成后，安装过程一直点击下一步就可以。</p><p>安装完成后启动可能会报错提示：WSL2缺失。</p><p>这里提供WSL2的下载地址：<a href="https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi">WSL2下载</a></p><p>WSL2下载完成后，点击Docker对话框的Restart就安装完成了。</p><h2 id="创建映射文件"><a href="#创建映射文件" class="headerlink" title="创建映射文件"></a>创建映射文件</h2><p>在想要安装容器的盘内创建一个新的文件夹，并命名为Docker。</p><p>在Docker文件夹下创建ql文件夹。</p><p>在ql文件夹下依次创建如下文件夹。</p><p>config、log、db、repo、raw、scripts</p><p>这六个文件夹创建完成后，打开cmd窗口执行如下命令。（以D盘为例）</p><pre><code>D:\cd Dockerdocker run -dit -v D:/Docker/ql/config:/ql/config -v D:/Docker/ql/log:/ql/log -v D:/Docker/ql/db:/ql/db -v D:/Docker/ql/repo:/ql/repo -v D:/Docker/ql/raw:/ql/raw -v D:/Docker/ql/scripts:/ql/scripts -p 5700:5700 --name qinglong --hostname qinglong -e TZ=Asia/Shanghai --restart unless-stopped whyour/qinglong:latest</code></pre><p>执行命令后会自动下载镜像，并启动。</p><p>在Docker程序中可以看到创建的镜像。</p><h3 id="启动镜像"><a href="#启动镜像" class="headerlink" title="启动镜像"></a>启动镜像</h3><p>在Docker中可以停止、启动镜像。</p><p>启动后访问<a href="http://localhost:5700/">http://localhost:5700</a> 即可访问创建的服务。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Docker </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Docker </tag>
             
         </tags>
       
@@ -63,7 +88,7 @@
       
       <categories>
           
-          <category> 折腾经历 </category>
+          <category> 博客相关 </category>
           
       </categories>
       
@@ -88,7 +113,7 @@
       
       <categories>
           
-          <category> 折腾经历 </category>
+          <category> 聊天机器人 </category>
           
       </categories>
       
@@ -113,7 +138,7 @@
       
       <categories>
           
-          <category> 折腾经历 </category>
+          <category> Docker </category>
           
       </categories>
       
