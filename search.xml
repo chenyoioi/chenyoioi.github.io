@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>对接使用redis储存</title>
+      <link href="/2023/07/22/7/"/>
+      <url>/2023/07/22/7/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Redis的特点"><a href="#Redis的特点" class="headerlink" title="Redis的特点"></a>Redis的特点</h1><p>1.Redis支持数据的持久化，可以将内存中的数据保存在磁盘中。<br>2.Redis数据读写速度非常快，因为它把数据都读取到内存当中操作。<br>3.Redis支持数据的备份，即master-slave模式的数据备份。<br>4.Redis提供了丰富的数据结构。<br>5.Redis的所有操作都是原子性，支持事务。</p><h1 id="教程开始"><a href="#教程开始" class="headerlink" title="教程开始"></a>教程开始</h1><p>1.拉取最新版redis镜像</p><pre><code class="php">docker pull redis:latest</code></pre><p>2.设置容器名为redis，端口配置为6379(注意！要去服务器放行此端口！)，配置永久存储文件地址为mnt/redis/data，配置文件地址为/mnt/redis/conf（这一步可不要，即-v /mnt/redis/conf/redis.conf:/etc/redis/redis.conf这一段内容删掉），设置密码为123456</p><pre><code class="php">docker run -itd --name redis -p 6379:6379 -v /mnt/redis/data:/data -v /mnt/redis/conf/redis.conf:/etc/redis/redis.conf redis:latest --requirepass &quot;123456&quot; </code></pre><p>3.检查有没有redis的容器运行</p><pre><code class="php">docker ps</code></pre><p>4.安装好redis后，进入傻妞后台-系统配置-基础参数，将默认存储改为redis，填入redis地址与密码保存重启傻妞。<br>地址举例：192.168.1.111:6379<br>密码：就是上面设置的那个123456</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 傻妞教程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> redis </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>学习才能强国</title>
       <link href="/2023/02/11/6/"/>
       <url>/2023/02/11/6/</url>
@@ -104,7 +129,7 @@
     
     
     <entry>
-      <title>sillyGirl对接QQBOT</title>
+      <title>傻妞安装与对接西瓜</title>
       <link href="/2023/01/03/2/"/>
       <url>/2023/01/03/2/</url>
       
@@ -113,7 +138,7 @@
       
       <categories>
           
-          <category> 聊天机器人 </category>
+          <category> 傻妞教程 </category>
           
       </categories>
       
