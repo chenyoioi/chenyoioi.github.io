@@ -7850,17 +7850,6 @@ body[data-type="music"] .s-sticker div {
 body:has(#console.show) #nav-music {
   display: none !important;
 }
-#nav-music {
-  display: none !important;
-}
-body:has(#console.show) #nav-music {
-  display: -webkit-box !important;
-  display: -moz-box !important;
-  display: -webkit-flex !important;
-  display: -ms-flexbox !important;
-  display: box !important;
-  display: flex !important;
-}
 @media screen and (max-width: 1400px) {
   body #anMusic-page #anMusicSwitching,
   body #anMusic-page #anMusicRefreshBtn,
@@ -10546,7 +10535,7 @@ h1.page-title + .tag-cloud-list {
 }
 #footer-wrap {
   position: relative;
-  padding: 40px 20px 0;
+  padding: 40px 20px;
   color: var(--light-grey);
   text-align: center;
 }
