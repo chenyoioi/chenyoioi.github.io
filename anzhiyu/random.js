@@ -1,3 +1,3 @@
-var posts=["2026/02/23/摸鱼/","2026/02/08/旅游随记/"];function toRandomPost(){
+var posts=["202602231529496837/","202605306856/","202602081855693957/"];function toRandomPost(){
     pjax.loadUrl('/'+posts[Math.floor(Math.random() * posts.length)]);
   };
