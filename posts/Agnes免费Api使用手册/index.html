@@ -1,0 +1,781 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"><title>Agnes免费Api使用手册 | 余逢记事本</title><meta name="keywords" content="AI"><meta name="author" content="John Doe"><meta name="copyright" content="John Doe"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#f7f9fe"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-touch-fullscreen" content="yes"><meta name="apple-mobile-web-app-title" content="Agnes免费Api使用手册"><meta name="application-name" content="Agnes免费Api使用手册"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="#f7f9fe"><meta property="og:type" content="article"><meta property="og:title" content="Agnes免费Api使用手册"><meta property="og:url" content="https://chenyoioi.github.io/posts/Agnes%E5%85%8D%E8%B4%B9Api%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/index.html"><meta property="og:site_name" content="余逢记事本"><meta property="og:description" content="Agnes 免费 API 使用手册关于免费说明结论截至 2026-06-04，Agnes AI 官网和官方文档中确实有”免费 API &amp;#x2F; 免费模型 &amp;#x2F; 免费 API key &amp;#x2F; 免费 credits 或 tokens”的公开表述。因此，”Agnes 提供免费 API k"><meta property="og:locale" content="zh-CN"><meta property="og:image" content="https://s41.ax1x.com/2026/06/16/pm1NF54.png"><meta property="article:author" content="John Doe"><meta property="article:tag"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://s41.ax1x.com/2026/06/16/pm1NF54.png"><meta name="description" content="Agnes 免费 API 使用手册关于免费说明结论截至 2026-06-04，Agnes AI 官网和官方文档中确实有”免费 API &amp;#x2F; 免费模型 &amp;#x2F; 免费 API key &amp;#x2F; 免费 credits 或 tokens”的公开表述。因此，”Agnes 提供免费 API k"><link rel="shortcut icon" href="/favicon.ico"><link rel="canonical" href="https://chenyoioi.github.io/posts/Agnes%E5%85%8D%E8%B4%B9Api%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/"><link rel="preconnect" href="//cdn.cbd.int"/><meta name="google-site-verification" content="xxx"/><meta name="baidu-site-verification" content="code-xxx"/><meta name="msvalidate.01" content="xxx"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/@fancyapps/ui@6.1.6/dist/fancybox/fancybox.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/swiper/swiper.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  linkPageTop: undefined,
+  peoplecanvas: undefined,
+  postHeadAiDescription: {"enable":true,"gptName":"AnZhiYu","mode":"local","switchBtn":false,"btnLink":"https://afdian.net/item/886a79d4db6711eda42a52540025c377","randomNum":3,"basicWordCount":1000,"key":"xxxx","Referer":"https://xx.xx/"},
+  diytitle: undefined,
+  LA51: undefined,
+  greetingBox: undefined,
+  twikooEnvId: '',
+  commentBarrageConfig:undefined,
+  music_page_default: "nav_music",
+  root: '/',
+  preloader: {"source":3},
+  friends_vue_info: undefined,
+  navMusic: false,
+  mainTone: undefined,
+  authorStatus: {"skills":null},
+  algolia: undefined,
+  localSearch: {"path":"/search.json","preload":true,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简","rightMenuMsgToTraditionalChinese":"转为繁体","rightMenuMsgToSimplifiedChinese":"转为简体"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":330},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    simplehomepage: true,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"copy":true,"copyrightEbable":false,"limitCount":50,"languages":{"author":"作者: John Doe","link":"链接: ","source":"来源: 余逢记事本","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。","copySuccess":"复制成功，复制和转载请标注本文地址"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#425AEF","bgDark":"#1f1f1f","position":"top-center"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.cbd.int/flickr-justified-gallery@2.2.0/dist/fjGallery.min.js',
+      css: 'https://cdn.cbd.int/flickr-justified-gallery@2.2.0/dist/fjGallery.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  shortcutKey: undefined,
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  configTitle: '余逢记事本',
+  title: 'Agnes免费Api使用手册',
+  postAI: '',
+  pageFillDescription: 'Agnes 免费 API 使用手册, 关于免费说明, 结论, 证据摘录, 需要保留的谨慎点, 快速开始, 1. 注册或登录平台, 2. 获取 API key, 3. 选择模型, 4. 调用 API, 5. 测试连接, 文本模型 API, 核心信息, 请求示例, 响应格式, 参数说明, System 消息示例, 多轮对话示例, 图像模型 API, 核心信息, 请求示例, 响应格式, 参数说明, 图像尺寸选项, 提示词建议, 视频模型 API, 核心信息, 创建视频任务, 响应格式（创建任务）, 查询任务状态, 响应格式（任务完成）, 参数说明, 任务状态, 视频轮询建议, OpenAI 兼容接入, Base URL, 对应关系, 在第三方工具中配置, 示例：Python OpenAI 库, 示例：curl 命令, 支持的工具, 注意事项, 排错与安全, 常见问题速查, API key 安全, 限速与重试, 正式使用前清单, 不改配置的命令行测试, 快速测试文本 API, 快速测试图像 API, 快速测试视频 API, 测试建议, 许可证免费使用手册关于免费说明结论截至官网和官方文档中确实有免费免费模型免费免费或的公开表述因此提供免费和免费使用这个说法基本是真的但建议理解为它目前公开宣称核心模型免费并允许注册后生成调用免费用户仍可能受到可用额度平台规则服务负载账户状态和未来政策变化的限制它不等于无限制无风险永久不会改价证据摘录官方页面写明平台提供面向开发者的免费服务可集成文本图像视频和多模态能力可免费使用核心模型可无限期免费使用免费用户会受到限制也就是每分钟请求数可能受限多模态模型也可免费使用包括文本图像视频和多模态能力注册后可在生成并按文档示例调用官方模型页的定价表显示模型官方当前定价表显示输入旧价为删除线输出旧价为删除线旧价为删除线旧价为删除线官网首页也把产品描述为平台并写到可创建免费使用免费需要保留的谨慎点官方同时提到完整功能可能需要账户有足够某些免费可用于测试明确提到免费用户存在限制第三方接入文档的排错部分提到认证失败时要检查是否有效以及账户是否有足够或价格和免费政策属于可变信息正式上线或高频生产使用前应再次查看中的快速开始注册或登录平台访问登录后进入开发者官方说明中可以管理等信息获取登录后在找到或类似入口创建一个新的复制该注意保存通常只显示一次选择模型提供多种模型包括文本模型等图像模型视频模型多模态模型支持文本图像视频等调用使用请求调用需要在中携带测试连接建议先用最小请求测试连接确保配置正确文本模型核心信息项目值端点模型鉴权当前定价表请求示例你好请介绍一下自己响应格式你好我是参数说明参数类型必填说明是模型名称如是对话消息数组是角色是消息内容否采样温度控制输出的随机性否最大输出数否核采样参数消息示例你是一个专业的客服助手友好且乐于助人你好我想了解一下你们的产品多轮对话示例你好我叫小明你好小明很高兴认识你我叫什么名字图像模型核心信息项目值端点模型或鉴权当前定价表请求示例一只可爱的橘猫坐在窗台上晒太阳响应格式参数说明参数类型必填说明是模型名称如是图像描述建议使用英文效果更好否生成数量默认为否图像尺寸如等否返回格式默认或图像尺寸选项推荐提示词建议使用英文描述通常效果更好描述应具体清晰可以指定风格场景光线等细节示例视频模型核心信息项目值创建任务查询任务模型鉴权当前定价表创建视频任务响应格式创建任务查询任务状态响应格式任务完成参数说明参数类型必填说明是模型名称是视频描述否帧数默认否帧率默认否视频宽度否视频高度任务状态排队中生成中已完成失败视频轮询建议视频生成是异步任务建议创建任务后获取轮询间隔从秒开始如果返回或继续等待如果返回读取视频如果返回记录完整响应并重新提交更小或更明确的任务伪代码兼容接入支持兼容格式可以无缝集成到支持的第三方工具中对应关系在第三方工具中配置你的选择对应的模型名称示例库文本对话你好图像生成示例命令你好支持的工具需配置其他支持的工具注意事项必须改为的地址模型名称需要使用的模型名称使用的部分功能可能与不完全一致排错与安全常见问题速查现象可能原因处理方式错误失效未带鉴权头重新复制确认是或错误文本用图像用视频查询用格式或参数不合法检查必填字段类型图片服务忙等待后重试加入指数退避响应慢高负载大网络延迟限制减小请求降低并发稍后重试免费额度调用失败账户状态或限制查看的获取模型列表失败配错第三方工具里填图像视频在聊天工具里失败工具只支持文本用自定义请求或后端代码调用安全不要把真实写入前端代码浏览器控制台截图或日志只在后端或受控环境变量中读取如果泄露立即在删除旧并重新生成线上服务建议为做服务端代理不要让用户浏览器直接请求日志中应隐藏例如只显示前位和后位限速与重试官方提到免费用户有限制建议对或明显服务忙的响应做指数退避不要在前端按钮连点时直接多次提交增加状态视频和图像任务使用队列避免瞬间提交大量请求对同一的重试设置最大次数正式使用前清单已确认当前的免费额度或状态关键接口已经用最小请求验证只在后端使用对错误码超时重试日志脱敏已有处理图像和视频生成结果已按业务需要下载转存或设置过期处理对官方价格和服务条款做上线前复核不改配置的命令行测试快速测试文本快速测试图像快速测试视频创建任务查询任务状态替换测试建议先用最小请求测试连接确认正确检查返回的状态码验证响应格式符合预期许可证本文档仅供学习参考具体请以官方文档为准最后更新',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2026-06-16 21:06:30',
+  postMainColor: '',
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#18171d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f7f9fe')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 8.1.2"></head><body data-type="anzhiyu"><div id="web_bg"></div><div id="an_music_bg"></div><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><img class="loading-img nolazyload" alt="加载头像" src="https://s21.ax1x.com/2024/11/09/pA6uVRU.jpg"/><div class="loading-image-dot"></div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.getElementById('loading-box').classList.add("loaded");
+  },
+  initLoading: () => {
+    document.getElementById('loading-box').classList.remove("loaded")
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+setTimeout(function(){preloader.endLoading();},10000)
+
+if (true) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.10/progress_bar/progress_bar.css"/><script async="async" src="https://cdn.cbd.int/pace-js@1.2.4/pace.min.js" data-pace-options="{ &quot;restartOnRequestAfter&quot;:false,&quot;eventLag&quot;:false}"></script><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><div id="nav-group"><span id="blog_name"><div class="back-home-button"><i class="anzhiyufont anzhiyu-icon-grip-vertical"></i><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://cygg.top/" title="博客"><img class="back-menu-item-icon" src="/img/favicon.ico" alt="博客"/><span class="back-menu-item-text">博客</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">娱乐</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://game.cygg.top/" title="小游戏"><img class="back-menu-item-icon" src="https://image.anheyu.com/favicon.ico" alt="小游戏"/><span class="back-menu-item-text">小游戏</span></a></div></div></div></div><a id="site-name" href="/" accesskey="h"><div class="title">余逢记事本</div><i class="anzhiyufont anzhiyu-icon-house-chimney"></i></a></span><div class="mask-name-container"><div id="name-container"><a id="page-name" href="javascript:anzhiyu.scrollToDest(0, 500)">PAGE_NAME</a></div></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 我的</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/creative-lab/"><i class="anzhiyufont anzhiyu-icon-flask faa-tada" style="font-size: 0.9em;"></i><span> 实验室</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/essay/"><i class="anzhiyufont anzhiyu-icon-comment faa-tada" style="font-size: 0.9em;"></i><span> 说说</span></a></li></ul></div></div></div><div id="nav-right"><div class="nav-button" id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" title="搜索🔍" accesskey="s"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span> 搜索</span></a></div><div id="console"><div class="console-card-group-reward"><ul class="reward-all console-card"><li class="reward-item"><a href="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png" target="_blank"><img class="post-qr-code-img" alt="微信" src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-alipay.png" target="_blank"><img class="post-qr-code-img" alt="支付宝" src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-alipay.png"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div><div class="console-card-group"><div class="console-card-group-left"><div class="console-card" id="card-newest-comments"><div class="card-content"><div class="author-content-item-tips">互动</div><span class="author-content-item-title"> 最新评论</span></div><div class="aside-list"><span>正在加载中...</span></div></div></div><div class="console-card-group-right"><div class="console-card tags"><div class="card-content"><div class="author-content-item-tips">兴趣点</div><span class="author-content-item-title">寻找你感兴趣的领域</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/AI/" style="font-size: 1.05rem;">AI<sup>2</sup></a><a href="/tags/%E6%97%85%E6%B8%B8/" style="font-size: 1.05rem;">旅游<sup>1</sup></a><a href="/tags/%E7%B3%BB%E7%BB%9F/" style="font-size: 1.05rem;">系统<sup>1</sup></a><a href="/tags/%E8%84%9A%E6%9C%AC/" style="font-size: 1.05rem;">脚本<sup>2</sup></a><a href="/tags/%E9%97%B2%E8%A8%80/" style="font-size: 1.05rem;">闲言<sup>1</sup></a></div></div><hr/></div></div><div class="console-card history"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-box-archiv"></i><span>文章</span></div><div class="card-archives"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2026/06/"><span class="card-archive-list-date">六月 2026</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2026/05/"><span class="card-archive-list-date">五月 2026</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2026/02/"><span class="card-archive-list-date">二月 2026</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/07/"><span class="card-archive-list-date">七月 2025</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/05/"><span class="card-archive-list-date">五月 2025</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/01/"><span class="card-archive-list-date">一月 2020</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li></ul></div><hr/></div></div></div><div class="button-group"><div class="console-btn-item"><a class="darkmode_switchbutton" title="显示模式切换" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-moon"></i></a></div><div class="console-btn-item" id="consoleHideAside" onclick="anzhiyu.hideAsideBtn()" title="边栏显示控制"><a class="asideSwitch"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></a></div></div><div class="console-mask" onclick="anzhiyu.hideConsole()" href="javascript:void(0);"></div></div><div class="nav-button" id="nav-totop"><a class="totopbtn" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i><span id="percent" onclick="anzhiyu.scrollToDest(0,500)">0</span></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" title="切换"><i class="anzhiyufont anzhiyu-icon-bars"></i></a></div></div></div></nav><div id="post-info"><div id="post-firstinfo"><div class="meta-firstline"><a class="post-meta-original">原创</a><span class="post-meta-categories"><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-inbox post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/" itemprop="url">经验分享</a></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/AI/" tabindex="-1" itemprop="url"> <span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>AI</span></a></span></div></div><h1 class="post-title" itemprop="name headline">Agnes免费Api使用手册</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" itemprop="dateCreated datePublished" datetime="2026-06-16T13:01:59.000Z" title="发表于 2026-06-16 21:01:59">2026-06-16</time><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-history post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" itemprop="dateCreated datePublished" datetime="2026-06-16T13:06:30.228Z" title="更新于 2026-06-16 21:06:30">2026-06-16</time></span></div><div class="meta-secondline"></div></div></div><section class="main-hero-waves-area waves-area"><svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path></defs><g class="parallax"><use href="#gentle-wave" x="48" y="0"></use><use href="#gentle-wave" x="48" y="3"></use><use href="#gentle-wave" x="48" y="5"></use><use href="#gentle-wave" x="48" y="7"></use></g></svg></section><div id="post-top-cover"><img class="nolazyload" id="post-top-bg" src="https://s41.ax1x.com/2026/06/16/pm1NF54.png"></div></header><main id="blog-container"><div class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container" itemscope itemtype="https://chenyoioi.github.io/posts/Agnes%E5%85%8D%E8%B4%B9Api%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/"><header><a class="post-meta-categories" href="/categories/%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/" itemprop="url">经验分享</a><a href="/tags/AI/" tabindex="-1" itemprop="url">AI</a><h1 id="CrawlerTitle" itemprop="name headline">Agnes免费Api使用手册</h1><span itemprop="author" itemscope itemtype="http://schema.org/Person">John Doe</span><time itemprop="dateCreated datePublished" datetime="2026-06-16T13:01:59.000Z" title="发表于 2026-06-16 21:01:59">2026-06-16</time><time itemprop="dateCreated datePublished" datetime="2026-06-16T13:06:30.228Z" title="更新于 2026-06-16 21:06:30">2026-06-16</time></header><h1 id="Agnes-免费-API-使用手册"><a href="#Agnes-免费-API-使用手册" class="headerlink" title="Agnes 免费 API 使用手册"></a>Agnes 免费 API 使用手册</h1><h2 id="关于免费说明"><a href="#关于免费说明" class="headerlink" title="关于免费说明"></a>关于免费说明</h2><h3 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h3><p>截至 2026-06-04，Agnes AI 官网和官方文档中确实有”免费 API &#x2F; 免费模型 &#x2F; 免费 API key &#x2F; 免费 credits 或 tokens”的公开表述。因此，”Agnes 提供免费 API key 和免费 API 使用”这个说法基本是真的。</p>
+<p>但建议理解为：它目前公开宣称核心模型免费，并允许注册后生成 API key 调用；免费用户仍可能受到 RPM、可用额度、平台规则、服务负载、账户状态和未来政策变化的限制。它不等于无限制、无 SLA 风险、永久不会改价。</p>
+<h3 id="证据摘录"><a href="#证据摘录" class="headerlink" title="证据摘录"></a>证据摘录</h3><p><strong>官方 FAQ 页面写明：</strong></p>
+<ul>
+<li>平台提供面向开发者的免费 AI API 服务，可集成文本、图像、视频和多模态能力</li>
+<li>API 可免费使用，核心 AI 模型可无限期免费使用</li>
+<li>免费用户会受到 RPM 限制，也就是每分钟请求数可能受限</li>
+<li>多模态模型也可免费使用，包括文本、图像、视频和多模态能力</li>
+<li>注册后可在 dashboard 生成 API key 并按文档示例调用</li>
+</ul>
+<p><strong>官方模型页的定价表显示：</strong></p>
+<table>
+<thead>
+<tr>
+<th>模型</th>
+<th>官方当前定价表显示</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>agnes-2.0-flash</code> 输入 tokens</td>
+<td><code>0 / 1M tokens</code>，旧价 <code>$0.1 / 1M tokens</code> 为删除线</td>
+</tr>
+<tr>
+<td><code>agnes-2.0-flash</code> 输出 tokens</td>
+<td><code>0 / 1M tokens</code>，旧价 <code>$0.2 / 1M tokens</code> 为删除线</td>
+</tr>
+<tr>
+<td><code>agnes-image-2.0-flash</code> &#x2F; <code>agnes-image-2.1-flash</code></td>
+<td><code>0 / image</code>，旧价 <code>0.003$/image</code> 为删除线</td>
+</tr>
+<tr>
+<td><code>agnes-video-v2.0</code></td>
+<td><code>0 / s</code>，旧价 <code>0.005$/s</code> 为删除线</td>
+</tr>
+</tbody></table>
+<p>官网首页 metadata 也把产品描述为 <code>Free AI API</code> 平台，并写到可创建免费 API key、使用免费 credits &#x2F; tokens &#x2F; models。</p>
+<h3 id="需要保留的谨慎点"><a href="#需要保留的谨慎点" class="headerlink" title="需要保留的谨慎点"></a>需要保留的谨慎点</h3><ol>
+<li>官方 Quickstart 同时提到：完整 API 功能可能需要账户有足够 billing balance，某些免费 tier 可用于测试</li>
+<li>FAQ 明确提到免费用户存在 RPM 限制</li>
+<li>第三方接入文档的排错部分提到认证失败时要检查 API key 是否有效，以及账户是否有足够 balance 或 credits</li>
+<li>价格和免费政策属于可变信息，正式上线或高频生产使用前应再次查看 dashboard 中的 Usage、Billing、Limits</li>
+</ol>
+<hr>
+<h2 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h2><h3 id="1-注册或登录平台"><a href="#1-注册或登录平台" class="headerlink" title="1. 注册或登录平台"></a>1. 注册或登录平台</h3><p>访问 Agnes AI Platform：</p>
+<p><a target="_blank" rel="noopener" href="https://platform.agnes-ai.com/">https://platform.agnes-ai.com/</a></p>
+<p>登录后进入开发者 dashboard。官方 Quickstart 说明，dashboard 中可以管理 API keys、billing 等信息。</p>
+<h3 id="2-获取-API-key"><a href="#2-获取-API-key" class="headerlink" title="2. 获取 API key"></a>2. 获取 API key</h3><ol>
+<li>登录后在 dashboard 找到 API Keys 或类似入口</li>
+<li>创建一个新的 API key</li>
+<li>复制该 key（注意保存，通常只显示一次）</li>
+</ol>
+<h3 id="3-选择模型"><a href="#3-选择模型" class="headerlink" title="3. 选择模型"></a>3. 选择模型</h3><p>Agnes 提供多种模型，包括：</p>
+<ul>
+<li><strong>文本模型</strong>：<code>agnes-2.0-flash</code> 等</li>
+<li><strong>图像模型</strong>：<code>agnes-image-2.0-flash</code>、<code>agnes-image-2.1-flash</code></li>
+<li><strong>视频模型</strong>：<code>agnes-video-v2.0</code></li>
+<li><strong>多模态模型</strong>：支持文本、图像、视频等</li>
+</ul>
+<h3 id="4-调用-API"><a href="#4-调用-API" class="headerlink" title="4. 调用 API"></a>4. 调用 API</h3><p>使用 HTTP 请求调用 API，需要在 header 中携带 API key：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Authorization: Bearer YOUR_API_KEY</span><br><span class="line">Content-Type: application/json</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-测试连接"><a href="#5-测试连接" class="headerlink" title="5. 测试连接"></a>5. 测试连接</h3><p>建议先用最小 curl 请求测试 API 连接，确保配置正确。</p>
+<hr>
+<h2 id="文本模型-API"><a href="#文本模型-API" class="headerlink" title="文本模型 API"></a>文本模型 API</h2><h3 id="核心信息"><a href="#核心信息" class="headerlink" title="核心信息"></a>核心信息</h3><table>
+<thead>
+<tr>
+<th>项目</th>
+<th>值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>端点</td>
+<td><code>POST https://apihub.agnes-ai.com/v1/chat/completions</code></td>
+</tr>
+<tr>
+<td>模型</td>
+<td><code>agnes-2.0-flash</code></td>
+</tr>
+<tr>
+<td>Content-Type</td>
+<td><code>application/json</code></td>
+</tr>
+<tr>
+<td>鉴权</td>
+<td><code>Authorization: Bearer YOUR_API_KEY</code></td>
+</tr>
+<tr>
+<td>当前定价表</td>
+<td><code>0 / 1M tokens</code></td>
+</tr>
+</tbody></table>
+<h3 id="请求示例"><a href="#请求示例" class="headerlink" title="请求示例"></a>请求示例</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">curl -X POST https://apihub.agnes-ai.com/v1/chat/completions \</span><br><span class="line">  -H <span class="string">&quot;Authorization: Bearer YOUR_API_KEY&quot;</span> \</span><br><span class="line">  -H <span class="string">&quot;Content-Type: application/json&quot;</span> \</span><br><span class="line">  -d <span class="string">&#x27;&#123;</span></span><br><span class="line"><span class="string">    &quot;model&quot;: &quot;agnes-2.0-flash&quot;,</span></span><br><span class="line"><span class="string">    &quot;messages&quot;: [</span></span><br><span class="line"><span class="string">      &#123;</span></span><br><span class="line"><span class="string">        &quot;role&quot;: &quot;user&quot;,</span></span><br><span class="line"><span class="string">        &quot;content&quot;: &quot;你好，请介绍一下自己&quot;</span></span><br><span class="line"><span class="string">      &#125;</span></span><br><span class="line"><span class="string">    ]</span></span><br><span class="line"><span class="string">  &#125;&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="响应格式"><a href="#响应格式" class="headerlink" title="响应格式"></a>响应格式</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;id&quot;</span><span class="punctuation">:</span> <span class="string">&quot;chatcmpl-xxx&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;object&quot;</span><span class="punctuation">:</span> <span class="string">&quot;chat.completion&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;created&quot;</span><span class="punctuation">:</span> <span class="number">1234567890</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;model&quot;</span><span class="punctuation">:</span> <span class="string">&quot;agnes-2.0-flash&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;choices&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;index&quot;</span><span class="punctuation">:</span> <span class="number">0</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;message&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;role&quot;</span><span class="punctuation">:</span> <span class="string">&quot;assistant&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;content&quot;</span><span class="punctuation">:</span> <span class="string">&quot;你好！我是...&quot;</span></span><br><span class="line">      <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;finish_reason&quot;</span><span class="punctuation">:</span> <span class="string">&quot;stop&quot;</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line">  <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;usage&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;prompt_tokens&quot;</span><span class="punctuation">:</span> <span class="number">10</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;completion_tokens&quot;</span><span class="punctuation">:</span> <span class="number">20</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;total_tokens&quot;</span><span class="punctuation">:</span> <span class="number">30</span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="参数说明"><a href="#参数说明" class="headerlink" title="参数说明"></a>参数说明</h3><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>必填</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>model</code></td>
+<td>string</td>
+<td>是</td>
+<td>模型名称，如 <code>agnes-2.0-flash</code></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td>array</td>
+<td>是</td>
+<td>对话消息数组</td>
+</tr>
+<tr>
+<td><code>messages[].role</code></td>
+<td>string</td>
+<td>是</td>
+<td>角色：<code>system</code>、<code>user</code>、<code>assistant</code></td>
+</tr>
+<tr>
+<td><code>messages[].content</code></td>
+<td>string</td>
+<td>是</td>
+<td>消息内容</td>
+</tr>
+<tr>
+<td><code>temperature</code></td>
+<td>float</td>
+<td>否</td>
+<td>采样温度（0-1），控制输出的随机性</td>
+</tr>
+<tr>
+<td><code>max_tokens</code></td>
+<td>integer</td>
+<td>否</td>
+<td>最大输出 token 数</td>
+</tr>
+<tr>
+<td><code>top_p</code></td>
+<td>float</td>
+<td>否</td>
+<td>核采样参数</td>
+</tr>
+</tbody></table>
+<h3 id="System-消息示例"><a href="#System-消息示例" class="headerlink" title="System 消息示例"></a>System 消息示例</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;model&quot;</span><span class="punctuation">:</span> <span class="string">&quot;agnes-2.0-flash&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;messages&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;role&quot;</span><span class="punctuation">:</span> <span class="string">&quot;system&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;content&quot;</span><span class="punctuation">:</span> <span class="string">&quot;你是一个专业的客服助手，友好且乐于助人。&quot;</span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;role&quot;</span><span class="punctuation">:</span> <span class="string">&quot;user&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;content&quot;</span><span class="punctuation">:</span> <span class="string">&quot;你好，我想了解一下你们的产品&quot;</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line">  <span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="多轮对话示例"><a href="#多轮对话示例" class="headerlink" title="多轮对话示例"></a>多轮对话示例</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;model&quot;</span><span class="punctuation">:</span> <span class="string">&quot;agnes-2.0-flash&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;messages&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;role&quot;</span><span class="punctuation">:</span> <span class="string">&quot;user&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;content&quot;</span><span class="punctuation">:</span> <span class="string">&quot;你好，我叫小明&quot;</span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;role&quot;</span><span class="punctuation">:</span> <span class="string">&quot;assistant&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;content&quot;</span><span class="punctuation">:</span> <span class="string">&quot;你好小明！很高兴认识你。&quot;</span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;role&quot;</span><span class="punctuation">:</span> <span class="string">&quot;user&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;content&quot;</span><span class="punctuation">:</span> <span class="string">&quot;我叫什么名字？&quot;</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line">  <span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="图像模型-API"><a href="#图像模型-API" class="headerlink" title="图像模型 API"></a>图像模型 API</h2><h3 id="核心信息-1"><a href="#核心信息-1" class="headerlink" title="核心信息"></a>核心信息</h3><table>
+<thead>
+<tr>
+<th>项目</th>
+<th>值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>端点</td>
+<td><code>POST https://apihub.agnes-ai.com/v1/images/generations</code></td>
+</tr>
+<tr>
+<td>模型</td>
+<td><code>agnes-image-2.0-flash</code> 或 <code>agnes-image-2.1-flash</code></td>
+</tr>
+<tr>
+<td>Content-Type</td>
+<td><code>application/json</code></td>
+</tr>
+<tr>
+<td>鉴权</td>
+<td><code>Authorization: Bearer YOUR_API_KEY</code></td>
+</tr>
+<tr>
+<td>当前定价表</td>
+<td><code>0 / image</code></td>
+</tr>
+</tbody></table>
+<h3 id="请求示例-1"><a href="#请求示例-1" class="headerlink" title="请求示例"></a>请求示例</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">curl -X POST https://apihub.agnes-ai.com/v1/images/generations \</span><br><span class="line">  -H <span class="string">&quot;Authorization: Bearer YOUR_API_KEY&quot;</span> \</span><br><span class="line">  -H <span class="string">&quot;Content-Type: application/json&quot;</span> \</span><br><span class="line">  -d <span class="string">&#x27;&#123;</span></span><br><span class="line"><span class="string">    &quot;model&quot;: &quot;agnes-image-2.0-flash&quot;,</span></span><br><span class="line"><span class="string">    &quot;prompt&quot;: &quot;一只可爱的橘猫坐在窗台上晒太阳&quot;,</span></span><br><span class="line"><span class="string">    &quot;n&quot;: 1,</span></span><br><span class="line"><span class="string">    &quot;size&quot;: &quot;1024x1024&quot;</span></span><br><span class="line"><span class="string">  &#125;&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="响应格式-1"><a href="#响应格式-1" class="headerlink" title="响应格式"></a>响应格式</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;created&quot;</span><span class="punctuation">:</span> <span class="number">1234567890</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;data&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;url&quot;</span><span class="punctuation">:</span> <span class="string">&quot;https://example.com/image.png&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;b64_json&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">null</span></span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line">  <span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="参数说明-1"><a href="#参数说明-1" class="headerlink" title="参数说明"></a>参数说明</h3><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>必填</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>model</code></td>
+<td>string</td>
+<td>是</td>
+<td>模型名称，如 <code>agnes-image-2.0-flash</code></td>
+</tr>
+<tr>
+<td><code>prompt</code></td>
+<td>string</td>
+<td>是</td>
+<td>图像描述（建议使用英文，效果更好）</td>
+</tr>
+<tr>
+<td><code>n</code></td>
+<td>integer</td>
+<td>否</td>
+<td>生成数量，默认为 1</td>
+</tr>
+<tr>
+<td><code>size</code></td>
+<td>string</td>
+<td>否</td>
+<td>图像尺寸，如 <code>1024x1024</code>、<code>512x512</code> 等</td>
+</tr>
+<tr>
+<td><code>response_format</code></td>
+<td>string</td>
+<td>否</td>
+<td>返回格式：<code>url</code>（默认）或 <code>b64_json</code></td>
+</tr>
+</tbody></table>
+<h3 id="图像尺寸选项"><a href="#图像尺寸选项" class="headerlink" title="图像尺寸选项"></a>图像尺寸选项</h3><ul>
+<li><code>256x256</code></li>
+<li><code>512x512</code></li>
+<li><code>1024x1024</code>（推荐）</li>
+</ul>
+<h3 id="提示词建议"><a href="#提示词建议" class="headerlink" title="提示词建议"></a>提示词建议</h3><ul>
+<li>使用英文描述通常效果更好</li>
+<li>描述应具体、清晰</li>
+<li>可以指定风格、场景、光线等细节</li>
+</ul>
+<p>示例：</p>
+<ul>
+<li>“A cute orange cat sitting on a windowsill in the sunshine, digital art”</li>
+<li>“A futuristic city at night, cyberpunk style, neon lights”</li>
+<li>“A serene mountain landscape with a lake, oil painting style”</li>
+</ul>
+<hr>
+<h2 id="视频模型-API"><a href="#视频模型-API" class="headerlink" title="视频模型 API"></a>视频模型 API</h2><h3 id="核心信息-2"><a href="#核心信息-2" class="headerlink" title="核心信息"></a>核心信息</h3><table>
+<thead>
+<tr>
+<th>项目</th>
+<th>值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>创建任务</td>
+<td><code>POST https://apihub.agnes-ai.com/v1/videos</code></td>
+</tr>
+<tr>
+<td>查询任务</td>
+<td><code>GET https://apihub.agnes-ai.com/v1/videos/{task_id}</code></td>
+</tr>
+<tr>
+<td>模型</td>
+<td><code>agnes-video-v2.0</code></td>
+</tr>
+<tr>
+<td>Content-Type</td>
+<td><code>application/json</code></td>
+</tr>
+<tr>
+<td>鉴权</td>
+<td><code>Authorization: Bearer YOUR_API_KEY</code></td>
+</tr>
+<tr>
+<td>当前定价表</td>
+<td><code>0 / s</code></td>
+</tr>
+</tbody></table>
+<h3 id="创建视频任务"><a href="#创建视频任务" class="headerlink" title="创建视频任务"></a>创建视频任务</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">curl -X POST https://apihub.agnes-ai.com/v1/videos \</span><br><span class="line">  -H <span class="string">&quot;Authorization: Bearer YOUR_API_KEY&quot;</span> \</span><br><span class="line">  -H <span class="string">&quot;Content-Type: application/json&quot;</span> \</span><br><span class="line">  -d <span class="string">&#x27;&#123;</span></span><br><span class="line"><span class="string">    &quot;model&quot;: &quot;agnes-video-v2.0&quot;,</span></span><br><span class="line"><span class="string">    &quot;prompt&quot;: &quot;A cat playing with a ball of yarn&quot;,</span></span><br><span class="line"><span class="string">    &quot;num_frames&quot;: 24,</span></span><br><span class="line"><span class="string">    &quot;fps&quot;: 8</span></span><br><span class="line"><span class="string">  &#125;&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="响应格式（创建任务）"><a href="#响应格式（创建任务）" class="headerlink" title="响应格式（创建任务）"></a>响应格式（创建任务）</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;id&quot;</span><span class="punctuation">:</span> <span class="string">&quot;video-task-xxx&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;object&quot;</span><span class="punctuation">:</span> <span class="string">&quot;video.task&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;created&quot;</span><span class="punctuation">:</span> <span class="number">1234567890</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;model&quot;</span><span class="punctuation">:</span> <span class="string">&quot;agnes-video-v2.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;status&quot;</span><span class="punctuation">:</span> <span class="string">&quot;queued&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;prompt&quot;</span><span class="punctuation">:</span> <span class="string">&quot;A cat playing with a ball of yarn&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="查询任务状态"><a href="#查询任务状态" class="headerlink" title="查询任务状态"></a>查询任务状态</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">curl -X GET https://apihub.agnes-ai.com/v1/videos/video-task-xxx \</span><br><span class="line">  -H <span class="string">&quot;Authorization: Bearer YOUR_API_KEY&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="响应格式（任务完成）"><a href="#响应格式（任务完成）" class="headerlink" title="响应格式（任务完成）"></a>响应格式（任务完成）</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;id&quot;</span><span class="punctuation">:</span> <span class="string">&quot;video-task-xxx&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;object&quot;</span><span class="punctuation">:</span> <span class="string">&quot;video.task&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;created&quot;</span><span class="punctuation">:</span> <span class="number">1234567890</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;model&quot;</span><span class="punctuation">:</span> <span class="string">&quot;agnes-video-v2.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;status&quot;</span><span class="punctuation">:</span> <span class="string">&quot;completed&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;prompt&quot;</span><span class="punctuation">:</span> <span class="string">&quot;A cat playing with a ball of yarn&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;video_url&quot;</span><span class="punctuation">:</span> <span class="string">&quot;https://example.com/video.mp4&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;duration&quot;</span><span class="punctuation">:</span> <span class="number">3.0</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;num_frames&quot;</span><span class="punctuation">:</span> <span class="number">24</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;fps&quot;</span><span class="punctuation">:</span> <span class="number">8</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="参数说明-2"><a href="#参数说明-2" class="headerlink" title="参数说明"></a>参数说明</h3><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>必填</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>model</code></td>
+<td>string</td>
+<td>是</td>
+<td>模型名称，<code>agnes-video-v2.0</code></td>
+</tr>
+<tr>
+<td><code>prompt</code></td>
+<td>string</td>
+<td>是</td>
+<td>视频描述</td>
+</tr>
+<tr>
+<td><code>num_frames</code></td>
+<td>integer</td>
+<td>否</td>
+<td>帧数（默认 24）</td>
+</tr>
+<tr>
+<td><code>fps</code></td>
+<td>integer</td>
+<td>否</td>
+<td>帧率（默认 8）</td>
+</tr>
+<tr>
+<td><code>width</code></td>
+<td>integer</td>
+<td>否</td>
+<td>视频宽度</td>
+</tr>
+<tr>
+<td><code>height</code></td>
+<td>integer</td>
+<td>否</td>
+<td>视频高度</td>
+</tr>
+</tbody></table>
+<h3 id="任务状态"><a href="#任务状态" class="headerlink" title="任务状态"></a>任务状态</h3><ul>
+<li><code>queued</code>：排队中</li>
+<li><code>in_progress</code>：生成中</li>
+<li><code>completed</code>：已完成</li>
+<li><code>failed</code>：失败</li>
+</ul>
+<h3 id="视频轮询建议"><a href="#视频轮询建议" class="headerlink" title="视频轮询建议"></a>视频轮询建议</h3><p>视频生成是异步任务，建议：</p>
+<ol>
+<li>创建任务后获取 <code>task_id</code></li>
+<li>轮询间隔从 3-5 秒开始</li>
+<li>如果返回 <code>queued</code> 或 <code>in_progress</code>，继续等待</li>
+<li>如果返回 <code>completed</code>，读取视频 URL</li>
+<li>如果返回 <code>failed</code>，记录完整响应并重新提交更小或更明确的任务</li>
+</ol>
+<p>伪代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">create task</span><br><span class="line">get task_id</span><br><span class="line">repeat:</span><br><span class="line">  wait 3-5 seconds</span><br><span class="line">  get /v1/videos/&#123;task_id&#125;</span><br><span class="line">  if status == completed: return result</span><br><span class="line">  if status == failed: stop and inspect error</span><br><span class="line">  if timeout: stop and alert</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="OpenAI-兼容接入"><a href="#OpenAI-兼容接入" class="headerlink" title="OpenAI 兼容接入"></a>OpenAI 兼容接入</h2><p>Agnes API 支持 OpenAI 兼容格式，可以无缝集成到支持 OpenAI 的第三方工具中。</p>
+<h3 id="Base-URL"><a href="#Base-URL" class="headerlink" title="Base URL"></a>Base URL</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://apihub.agnes-ai.com/v1</span><br></pre></td></tr></table></figure>
+
+<h3 id="对应关系"><a href="#对应关系" class="headerlink" title="对应关系"></a>对应关系</h3><table>
+<thead>
+<tr>
+<th>OpenAI</th>
+<th>Agnes</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>https://api.openai.com/v1</code></td>
+<td><code>https://apihub.agnes-ai.com/v1</code></td>
+</tr>
+<tr>
+<td><code>gpt-4</code></td>
+<td><code>agnes-2.0-flash</code></td>
+</tr>
+<tr>
+<td><code>dall-e-3</code></td>
+<td><code>agnes-image-2.0-flash</code></td>
+</tr>
+</tbody></table>
+<h3 id="在第三方工具中配置"><a href="#在第三方工具中配置" class="headerlink" title="在第三方工具中配置"></a>在第三方工具中配置</h3><ol>
+<li><strong>Base URL</strong>：<code>https://apihub.agnes-ai.com/v1</code></li>
+<li><strong>API Key</strong>：你的 Agnes API key</li>
+<li><strong>Model</strong>：选择对应的 Agnes 模型名称</li>
+</ol>
+<h3 id="示例：Python-OpenAI-库"><a href="#示例：Python-OpenAI-库" class="headerlink" title="示例：Python OpenAI 库"></a>示例：Python OpenAI 库</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> openai <span class="keyword">import</span> OpenAI</span><br><span class="line"></span><br><span class="line">client = OpenAI(</span><br><span class="line">    api_key=<span class="string">&quot;YOUR_AGNES_API_KEY&quot;</span>,</span><br><span class="line">    base_url=<span class="string">&quot;https://apihub.agnes-ai.com/v1&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 文本对话</span></span><br><span class="line">response = client.chat.completions.create(</span><br><span class="line">    model=<span class="string">&quot;agnes-2.0-flash&quot;</span>,</span><br><span class="line">    messages=[</span><br><span class="line">        &#123;<span class="string">&quot;role&quot;</span>: <span class="string">&quot;user&quot;</span>, <span class="string">&quot;content&quot;</span>: <span class="string">&quot;你好&quot;</span>&#125;</span><br><span class="line">    ]</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(response.choices[<span class="number">0</span>].message.content)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 图像生成</span></span><br><span class="line">image_response = client.images.generate(</span><br><span class="line">    model=<span class="string">&quot;agnes-image-2.0-flash&quot;</span>,</span><br><span class="line">    prompt=<span class="string">&quot;A cute cat&quot;</span>,</span><br><span class="line">    n=<span class="number">1</span>,</span><br><span class="line">    size=<span class="string">&quot;1024x1024&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(image_response.data[<span class="number">0</span>].url)</span><br></pre></td></tr></table></figure>
+
+<h3 id="示例：curl-命令"><a href="#示例：curl-命令" class="headerlink" title="示例：curl 命令"></a>示例：curl 命令</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">curl -X POST https://apihub.agnes-ai.com/v1/chat/completions \</span><br><span class="line">  -H <span class="string">&quot;Authorization: Bearer YOUR_API_KEY&quot;</span> \</span><br><span class="line">  -H <span class="string">&quot;Content-Type: application/json&quot;</span> \</span><br><span class="line">  -d <span class="string">&#x27;&#123;</span></span><br><span class="line"><span class="string">    &quot;model&quot;: &quot;agnes-2.0-flash&quot;,</span></span><br><span class="line"><span class="string">    &quot;messages&quot;: [</span></span><br><span class="line"><span class="string">      &#123;</span></span><br><span class="line"><span class="string">        &quot;role&quot;: &quot;user&quot;,</span></span><br><span class="line"><span class="string">        &quot;content&quot;: &quot;你好&quot;</span></span><br><span class="line"><span class="string">      &#125;</span></span><br><span class="line"><span class="string">    ]</span></span><br><span class="line"><span class="string">  &#125;&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="支持的工具"><a href="#支持的工具" class="headerlink" title="支持的工具"></a>支持的工具</h3><ul>
+<li>ChatGPT Web UI（需配置）</li>
+<li>Cursor</li>
+<li>Continue.dev</li>
+<li>其他支持 OpenAI API 的工具</li>
+</ul>
+<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><ol>
+<li>Base URL 必须改为 Agnes 的地址</li>
+<li>模型名称需要使用 Agnes 的模型名称</li>
+<li>API Key 使用 Agnes 的 API key</li>
+<li>部分功能可能与 OpenAI 不完全一致</li>
+</ol>
+<hr>
+<h2 id="排错与安全"><a href="#排错与安全" class="headerlink" title="排错与安全"></a>排错与安全</h2><h3 id="常见问题速查"><a href="#常见问题速查" class="headerlink" title="常见问题速查"></a>常见问题速查</h3><table>
+<thead>
+<tr>
+<th>现象</th>
+<th>可能原因</th>
+<th>处理方式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>401 Unauthorized</code></td>
+<td>API key 错误、失效、未带鉴权头</td>
+<td>重新复制 key，确认 header 是 <code>Authorization: Bearer YOUR_API_KEY</code></td>
+</tr>
+<tr>
+<td><code>404</code></td>
+<td>endpoint 或 task id 错误</td>
+<td>文本用 <code>/chat/completions</code>，图像用 <code>/images/generations</code>，视频查询用 <code>/videos/{task_id}</code></td>
+</tr>
+<tr>
+<td><code>400</code></td>
+<td>JSON 格式或参数不合法</td>
+<td>检查必填字段、类型、<code>num_frames</code>、图片 URL</td>
+</tr>
+<tr>
+<td><code>503</code></td>
+<td>服务忙</td>
+<td>等待后重试，加入指数退避</td>
+</tr>
+<tr>
+<td>响应慢</td>
+<td>高负载、大 prompt、网络延迟、RPM 限制</td>
+<td>减小请求、降低并发、稍后重试</td>
+</tr>
+<tr>
+<td>免费额度调用失败</td>
+<td>RPM、credits、账户状态或 billing 限制</td>
+<td>查看 dashboard 的 Usage、Billing、Limits</td>
+</tr>
+<tr>
+<td>获取模型列表失败</td>
+<td>Base URL 配错</td>
+<td>第三方工具里填 <code>https://apihub.agnes-ai.com/v1</code></td>
+</tr>
+<tr>
+<td>图像&#x2F;视频在聊天工具里失败</td>
+<td>工具只支持文本 OpenAI-compatible chat</td>
+<td>用 Skill、Agent tool、自定义 HTTP 请求或后端代码调用</td>
+</tr>
+</tbody></table>
+<h3 id="API-key-安全"><a href="#API-key-安全" class="headerlink" title="API key 安全"></a>API key 安全</h3><ol>
+<li><strong>不要把真实 API key 写入 Markdown、GitHub、前端代码、浏览器控制台截图或日志</strong></li>
+<li>只在后端或受控环境变量中读取 key</li>
+<li>如果 key 泄露，立即在 dashboard 删除旧 key 并重新生成</li>
+<li>线上服务建议为 Agnes API 做服务端代理，不要让用户浏览器直接请求 Agnes API</li>
+<li>日志中应隐藏 key，例如只显示前 4 位和后 4 位</li>
+</ol>
+<h3 id="限速与重试"><a href="#限速与重试" class="headerlink" title="限速与重试"></a>限速与重试</h3><p>官方 FAQ 提到免费用户有 RPM 限制。建议：</p>
+<ul>
+<li>对 <code>429</code>、<code>503</code> 或明显服务忙的响应做指数退避</li>
+<li>不要在前端按钮连点时直接多次提交，增加 loading 状态</li>
+<li>视频和图像任务使用队列，避免瞬间提交大量请求</li>
+<li>对同一 prompt 的重试设置最大次数</li>
+</ul>
+<h3 id="正式使用前清单"><a href="#正式使用前清单" class="headerlink" title="正式使用前清单"></a>正式使用前清单</h3><ul>
+<li><input disabled="" type="checkbox"> 已确认当前 dashboard 的免费额度、RPM、credits 或 billing 状态</li>
+<li><input disabled="" type="checkbox"> 关键接口已经用最小 curl 请求验证</li>
+<li><input disabled="" type="checkbox"> API key 只在后端使用</li>
+<li><input disabled="" type="checkbox"> 对错误码、超时、重试、日志脱敏已有处理</li>
+<li><input disabled="" type="checkbox"> 图像和视频生成结果 URL 已按业务需要下载、转存或设置过期处理</li>
+<li><input disabled="" type="checkbox"> 对官方价格和服务条款做上线前复核</li>
+</ul>
+<hr>
+<h2 id="不改配置的命令行测试"><a href="#不改配置的命令行测试" class="headerlink" title="不改配置的命令行测试"></a>不改配置的命令行测试</h2><h3 id="快速测试文本-API"><a href="#快速测试文本-API" class="headerlink" title="快速测试文本 API"></a>快速测试文本 API</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">curl -X POST https://apihub.agnes-ai.com/v1/chat/completions \</span><br><span class="line">  -H <span class="string">&quot;Authorization: Bearer YOUR_API_KEY&quot;</span> \</span><br><span class="line">  -H <span class="string">&quot;Content-Type: application/json&quot;</span> \</span><br><span class="line">  -d <span class="string">&#x27;&#123;</span></span><br><span class="line"><span class="string">    &quot;model&quot;: &quot;agnes-2.0-flash&quot;,</span></span><br><span class="line"><span class="string">    &quot;messages&quot;: [</span></span><br><span class="line"><span class="string">      &#123;</span></span><br><span class="line"><span class="string">        &quot;role&quot;: &quot;user&quot;,</span></span><br><span class="line"><span class="string">        &quot;content&quot;: &quot;Hello, how are you?&quot;</span></span><br><span class="line"><span class="string">      &#125;</span></span><br><span class="line"><span class="string">    ]</span></span><br><span class="line"><span class="string">  &#125;&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="快速测试图像-API"><a href="#快速测试图像-API" class="headerlink" title="快速测试图像 API"></a>快速测试图像 API</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">curl -X POST https://apihub.agnes-ai.com/v1/images/generations \</span><br><span class="line">  -H <span class="string">&quot;Authorization: Bearer YOUR_API_KEY&quot;</span> \</span><br><span class="line">  -H <span class="string">&quot;Content-Type: application/json&quot;</span> \</span><br><span class="line">  -d <span class="string">&#x27;&#123;</span></span><br><span class="line"><span class="string">    &quot;model&quot;: &quot;agnes-image-2.0-flash&quot;,</span></span><br><span class="line"><span class="string">    &quot;prompt&quot;: &quot;A cute cat&quot;,</span></span><br><span class="line"><span class="string">    &quot;n&quot;: 1,</span></span><br><span class="line"><span class="string">    &quot;size&quot;: &quot;1024x1024&quot;</span></span><br><span class="line"><span class="string">  &#125;&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="快速测试视频-API"><a href="#快速测试视频-API" class="headerlink" title="快速测试视频 API"></a>快速测试视频 API</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建任务</span></span><br><span class="line">curl -X POST https://apihub.agnes-ai.com/v1/videos \</span><br><span class="line">  -H <span class="string">&quot;Authorization: Bearer YOUR_API_KEY&quot;</span> \</span><br><span class="line">  -H <span class="string">&quot;Content-Type: application/json&quot;</span> \</span><br><span class="line">  -d <span class="string">&#x27;&#123;</span></span><br><span class="line"><span class="string">    &quot;model&quot;: &quot;agnes-video-v2.0&quot;,</span></span><br><span class="line"><span class="string">    &quot;prompt&quot;: &quot;A cat playing&quot;,</span></span><br><span class="line"><span class="string">    &quot;num_frames&quot;: 24,</span></span><br><span class="line"><span class="string">    &quot;fps&quot;: 8</span></span><br><span class="line"><span class="string">  &#125;&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 查询任务状态（替换 task_id）</span></span><br><span class="line">curl -X GET https://apihub.agnes-ai.com/v1/videos/&#123;task_id&#125; \</span><br><span class="line">  -H <span class="string">&quot;Authorization: Bearer YOUR_API_KEY&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="测试建议"><a href="#测试建议" class="headerlink" title="测试建议"></a>测试建议</h3><ol>
+<li>先用最小请求测试连接</li>
+<li>确认 API key 正确</li>
+<li>检查返回的状态码</li>
+<li>验证响应格式符合预期</li>
+</ol>
+<hr>
+<h2 id="许可证"><a href="#许可证" class="headerlink" title="许可证"></a>许可证</h2><p>本文档仅供学习参考，具体请以 Agnes AI 官方文档为准。</p>
+<hr>
+<p><strong>最后更新</strong>：2026-06-16</p>
+</article><nav class="pagination-post" id="pagination"><div class="prev-post pull-full"><a href="/posts/%E6%9F%90%E6%95%99%E8%82%B2%E5%B9%B3%E5%8F%B0%E8%A7%86%E9%A2%91%E4%B8%8B%E8%BD%BD%E5%AE%8C%E6%95%B4%E6%8C%87%E5%8D%97/"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://s41.ax1x.com/2026/06/07/pmmhyH1.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">平台视频下载完整指南</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="anzhiyufont anzhiyu-icon-thumbs-up fa-fw" style="font-size: 1.5rem; margin-right: 4px"></i><span>喜欢这篇文章的人也看了</span></div><div class="relatedPosts-list"><div><a href="/posts/%E6%A0%87%E7%AD%BE%E7%94%A8%E6%B3%95%E6%89%8B%E5%86%8C/" title="主题标签 Tag Plugins 用法手册"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://s41.ax1x.com/2026/06/09/pmnxwSH.png" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2020-01-01</div><div class="title">主题标签 Tag Plugins 用法手册</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-content"><div class="author-info__sayhi" id="author-info__sayhi" onclick="anzhiyu.changeSayHelloText()"></div><div class="author-info-avatar"><img class="avatar-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://s21.ax1x.com/2024/11/09/pA6uVRU.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-status"><img class="g-status" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2023/08/24/64e6ce9c507bb.png" alt="status"/></div></div><div class="author-info__description"><div style="line-height:1.38;margin:0.6rem 0;text-align:justify;color:rgba(255, 255, 255, 0.8);">这有一些<b style="color:#fff">个人遇到的</b>问题和解决经验，还有<b style="color:#fff">闲言碎语</b>和<b style="color:#fff">分享</b>。</div><div style="line-height:1.38;margin:0.6rem 0;text-align:justify;color:rgba(255, 255, 255, 0.8);">希望你可以在这里找到对你有用的<b style="color:#fff">知识</b>和<b style="color:#fff">教程</b>。</div></div><div class="author-info__bottom-group"><a class="author-info__bottom-group-left" href="/"><h1 class="author-info__name">John Doe</h1><div class="author-info__desc">岁月留余，幸得相逢。</div></a><div class="card-info-social-icons is-center"><a class="social-icon faa-parent animated-hover" href="https://cygg.top" target="_blank" title="Github"><i class="anzhiyufont anzhiyu-icon-github"></i></a></div></div></div></div><div class="card-widget card-fish-calendar" id="card-fish-calendar"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-fish"></i><span>摸鱼日历</span></div><div class="item-content"><div id="fish-calendar" style="text-align:center;padding:10px 0;"></div>
+<script>
+(function(){
+  var now = new Date();
+  var weekDays = ['日','一','二','三','四','五','六'];
+  var day = now.getDay();
+  var dateStr = now.getFullYear() + '年' + (now.getMonth()+1) + '月' + now.getDate() + '日';
+  var dayStr = '星期' + weekDays[day];
+  var tips = '';
+  var daysToWeekend = day === 0 ? 0 : day === 6 ? 0 : 6 - day;
+  if (day === 0 || day === 6) {
+    tips = '🎉 今天是周末，好好休息吧！';
+  } else if (day === 5) {
+    tips = '🐟 明天就是周末啦，再坚持一下！';
+  } else if (day === 1) {
+    tips = '😴 周一摸鱼，元气恢复中...';
+  } else if (day === 2) {
+    tips = '☕ 周二了，摸鱼喝杯咖啡？';
+  } else if (day === 3) {
+    tips = '🌊 周三，一周的中点，摸鱼冲浪中...';
+  } else if (day === 4) {
+    tips = '🔥 周四啦，胜利在望！';
+  }
+  var html = '<div style="font-size:20px;font-weight:700;color:var(--anzhiyu-fontcolor);margin-bottom:4px;">' + dateStr + '</div>';
+  html += '<div style="font-size:15px;color:var(--anzhiyu-secondtext);margin-bottom:10px;">' + dayStr + '</div>';
+  if (daysToWeekend > 0) {
+    html += '<div style="background:var(--anzhiyu-card-bg);border-radius:8px;padding:8px 12px;margin-bottom:8px;font-size:13px;color:var(--anzhiyu-secondtext);">';
+    html += '距离周末还有 <b style="color:var(--anzhiyu-main);font-size:16px;">' + daysToWeekend + '</b> 天';
+    html += '</div>';
+  }
+  html += '<div style="font-size:13px;color:var(--anzhiyu-secondtext);line-height:1.6;">' + tips + '</div>';
+  document.getElementById('fish-calendar').innerHTML = html;
+})();
+</script>
+</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-bars"></i><span>文章目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Agnes-%E5%85%8D%E8%B4%B9-API-%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C"><span class="toc-number">1.</span> <span class="toc-text">Agnes 免费 API 使用手册</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E5%85%8D%E8%B4%B9%E8%AF%B4%E6%98%8E"><span class="toc-number">1.1.</span> <span class="toc-text">关于免费说明</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%93%E8%AE%BA"><span class="toc-number">1.1.1.</span> <span class="toc-text">结论</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%81%E6%8D%AE%E6%91%98%E5%BD%95"><span class="toc-number">1.1.2.</span> <span class="toc-text">证据摘录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9C%80%E8%A6%81%E4%BF%9D%E7%95%99%E7%9A%84%E8%B0%A8%E6%85%8E%E7%82%B9"><span class="toc-number">1.1.3.</span> <span class="toc-text">需要保留的谨慎点</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B"><span class="toc-number">1.2.</span> <span class="toc-text">快速开始</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%B3%A8%E5%86%8C%E6%88%96%E7%99%BB%E5%BD%95%E5%B9%B3%E5%8F%B0"><span class="toc-number">1.2.1.</span> <span class="toc-text">1. 注册或登录平台</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E8%8E%B7%E5%8F%96-API-key"><span class="toc-number">1.2.2.</span> <span class="toc-text">2. 获取 API key</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E9%80%89%E6%8B%A9%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.2.3.</span> <span class="toc-text">3. 选择模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E8%B0%83%E7%94%A8-API"><span class="toc-number">1.2.4.</span> <span class="toc-text">4. 调用 API</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E6%B5%8B%E8%AF%95%E8%BF%9E%E6%8E%A5"><span class="toc-number">1.2.5.</span> <span class="toc-text">5. 测试连接</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E6%9C%AC%E6%A8%A1%E5%9E%8B-API"><span class="toc-number">1.3.</span> <span class="toc-text">文本模型 API</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E4%BF%A1%E6%81%AF"><span class="toc-number">1.3.1.</span> <span class="toc-text">核心信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%B7%E6%B1%82%E7%A4%BA%E4%BE%8B"><span class="toc-number">1.3.2.</span> <span class="toc-text">请求示例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%93%8D%E5%BA%94%E6%A0%BC%E5%BC%8F"><span class="toc-number">1.3.3.</span> <span class="toc-text">响应格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E"><span class="toc-number">1.3.4.</span> <span class="toc-text">参数说明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#System-%E6%B6%88%E6%81%AF%E7%A4%BA%E4%BE%8B"><span class="toc-number">1.3.5.</span> <span class="toc-text">System 消息示例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E8%BD%AE%E5%AF%B9%E8%AF%9D%E7%A4%BA%E4%BE%8B"><span class="toc-number">1.3.6.</span> <span class="toc-text">多轮对话示例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E5%83%8F%E6%A8%A1%E5%9E%8B-API"><span class="toc-number">1.4.</span> <span class="toc-text">图像模型 API</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E4%BF%A1%E6%81%AF-1"><span class="toc-number">1.4.1.</span> <span class="toc-text">核心信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%B7%E6%B1%82%E7%A4%BA%E4%BE%8B-1"><span class="toc-number">1.4.2.</span> <span class="toc-text">请求示例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%93%8D%E5%BA%94%E6%A0%BC%E5%BC%8F-1"><span class="toc-number">1.4.3.</span> <span class="toc-text">响应格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E-1"><span class="toc-number">1.4.4.</span> <span class="toc-text">参数说明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BE%E5%83%8F%E5%B0%BA%E5%AF%B8%E9%80%89%E9%A1%B9"><span class="toc-number">1.4.5.</span> <span class="toc-text">图像尺寸选项</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%BB%BA%E8%AE%AE"><span class="toc-number">1.4.6.</span> <span class="toc-text">提示词建议</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%86%E9%A2%91%E6%A8%A1%E5%9E%8B-API"><span class="toc-number">1.5.</span> <span class="toc-text">视频模型 API</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E4%BF%A1%E6%81%AF-2"><span class="toc-number">1.5.1.</span> <span class="toc-text">核心信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E8%A7%86%E9%A2%91%E4%BB%BB%E5%8A%A1"><span class="toc-number">1.5.2.</span> <span class="toc-text">创建视频任务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%93%8D%E5%BA%94%E6%A0%BC%E5%BC%8F%EF%BC%88%E5%88%9B%E5%BB%BA%E4%BB%BB%E5%8A%A1%EF%BC%89"><span class="toc-number">1.5.3.</span> <span class="toc-text">响应格式（创建任务）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2%E4%BB%BB%E5%8A%A1%E7%8A%B6%E6%80%81"><span class="toc-number">1.5.4.</span> <span class="toc-text">查询任务状态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%93%8D%E5%BA%94%E6%A0%BC%E5%BC%8F%EF%BC%88%E4%BB%BB%E5%8A%A1%E5%AE%8C%E6%88%90%EF%BC%89"><span class="toc-number">1.5.5.</span> <span class="toc-text">响应格式（任务完成）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E-2"><span class="toc-number">1.5.6.</span> <span class="toc-text">参数说明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%BB%E5%8A%A1%E7%8A%B6%E6%80%81"><span class="toc-number">1.5.7.</span> <span class="toc-text">任务状态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%86%E9%A2%91%E8%BD%AE%E8%AF%A2%E5%BB%BA%E8%AE%AE"><span class="toc-number">1.5.8.</span> <span class="toc-text">视频轮询建议</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#OpenAI-%E5%85%BC%E5%AE%B9%E6%8E%A5%E5%85%A5"><span class="toc-number">1.6.</span> <span class="toc-text">OpenAI 兼容接入</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Base-URL"><span class="toc-number">1.6.1.</span> <span class="toc-text">Base URL</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E5%BA%94%E5%85%B3%E7%B3%BB"><span class="toc-number">1.6.2.</span> <span class="toc-text">对应关系</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%A8%E7%AC%AC%E4%B8%89%E6%96%B9%E5%B7%A5%E5%85%B7%E4%B8%AD%E9%85%8D%E7%BD%AE"><span class="toc-number">1.6.3.</span> <span class="toc-text">在第三方工具中配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B%EF%BC%9APython-OpenAI-%E5%BA%93"><span class="toc-number">1.6.4.</span> <span class="toc-text">示例：Python OpenAI 库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B%EF%BC%9Acurl-%E5%91%BD%E4%BB%A4"><span class="toc-number">1.6.5.</span> <span class="toc-text">示例：curl 命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%94%AF%E6%8C%81%E7%9A%84%E5%B7%A5%E5%85%B7"><span class="toc-number">1.6.6.</span> <span class="toc-text">支持的工具</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-number">1.6.7.</span> <span class="toc-text">注意事项</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%92%E9%94%99%E4%B8%8E%E5%AE%89%E5%85%A8"><span class="toc-number">1.7.</span> <span class="toc-text">排错与安全</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E9%80%9F%E6%9F%A5"><span class="toc-number">1.7.1.</span> <span class="toc-text">常见问题速查</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#API-key-%E5%AE%89%E5%85%A8"><span class="toc-number">1.7.2.</span> <span class="toc-text">API key 安全</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%99%90%E9%80%9F%E4%B8%8E%E9%87%8D%E8%AF%95"><span class="toc-number">1.7.3.</span> <span class="toc-text">限速与重试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A3%E5%BC%8F%E4%BD%BF%E7%94%A8%E5%89%8D%E6%B8%85%E5%8D%95"><span class="toc-number">1.7.4.</span> <span class="toc-text">正式使用前清单</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8D%E6%94%B9%E9%85%8D%E7%BD%AE%E7%9A%84%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%B5%8B%E8%AF%95"><span class="toc-number">1.8.</span> <span class="toc-text">不改配置的命令行测试</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BF%AB%E9%80%9F%E6%B5%8B%E8%AF%95%E6%96%87%E6%9C%AC-API"><span class="toc-number">1.8.1.</span> <span class="toc-text">快速测试文本 API</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BF%AB%E9%80%9F%E6%B5%8B%E8%AF%95%E5%9B%BE%E5%83%8F-API"><span class="toc-number">1.8.2.</span> <span class="toc-text">快速测试图像 API</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BF%AB%E9%80%9F%E6%B5%8B%E8%AF%95%E8%A7%86%E9%A2%91-API"><span class="toc-number">1.8.3.</span> <span class="toc-text">快速测试视频 API</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95%E5%BB%BA%E8%AE%AE"><span class="toc-number">1.8.4.</span> <span class="toc-text">测试建议</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%B8%E5%8F%AF%E8%AF%81"><span class="toc-number">1.9.</span> <span class="toc-text">许可证</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-history"></i><span>最近发布</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/Agnes%E5%85%8D%E8%B4%B9Api%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/" title="Agnes免费Api使用手册"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://s41.ax1x.com/2026/06/16/pm1NF54.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Agnes免费Api使用手册"/></a><div class="content"><a class="title" href="/posts/Agnes%E5%85%8D%E8%B4%B9Api%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/" title="Agnes免费Api使用手册">Agnes免费Api使用手册</a><time datetime="2026-06-16T13:01:59.000Z" title="发表于 2026-06-16 21:01:59">2026-06-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/%E6%9F%90%E6%95%99%E8%82%B2%E5%B9%B3%E5%8F%B0%E8%A7%86%E9%A2%91%E4%B8%8B%E8%BD%BD%E5%AE%8C%E6%95%B4%E6%8C%87%E5%8D%97/" title="平台视频下载完整指南"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://s41.ax1x.com/2026/06/07/pmmhyH1.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="平台视频下载完整指南"/></a><div class="content"><a class="title" href="/posts/%E6%9F%90%E6%95%99%E8%82%B2%E5%B9%B3%E5%8F%B0%E8%A7%86%E9%A2%91%E4%B8%8B%E8%BD%BD%E5%AE%8C%E6%95%B4%E6%8C%87%E5%8D%97/" title="平台视频下载完整指南">平台视频下载完整指南</a><time datetime="2026-06-05T13:57:05.000Z" title="发表于 2026-06-05 21:57:05">2026-06-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/%E7%B3%BB%E7%BB%9F%E6%BF%80%E6%B4%BB%E5%B7%A5%E5%85%B7/" title="Windows重装系统及如何激活"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://s41.ax1x.com/2026/06/07/pmmhcAx.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Windows重装系统及如何激活"/></a><div class="content"><a class="title" href="/posts/%E7%B3%BB%E7%BB%9F%E6%BF%80%E6%B4%BB%E5%B7%A5%E5%85%B7/" title="Windows重装系统及如何激活">Windows重装系统及如何激活</a><time datetime="2026-05-30T08:38:18.000Z" title="发表于 2026-05-30 16:38:18">2026-05-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/%E6%97%85%E6%B8%B8%E9%9A%8F%E8%AE%B0/" title="豫境六日"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://s41.ax1x.com/2026/06/07/pmmhsBR.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="豫境六日"/></a><div class="content"><a class="title" href="/posts/%E6%97%85%E6%B8%B8%E9%9A%8F%E8%AE%B0/" title="豫境六日">豫境六日</a><time datetime="2026-02-08T09:56:00.000Z" title="发表于 2026-02-08 17:56:00">2026-02-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/%E6%91%B8%E9%B1%BC/" title="各种培训的摸鱼方法"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://s41.ax1x.com/2026/06/07/pmmhru9.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="各种培训的摸鱼方法"/></a><div class="content"><a class="title" href="/posts/%E6%91%B8%E9%B1%BC/" title="各种培训的摸鱼方法">各种培训的摸鱼方法</a><time datetime="2025-07-16T09:56:00.000Z" title="发表于 2025-07-16 17:56:00">2025-07-16</time></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"></div></footer></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="sidebar-site-data site-data is-center"><a href="/archives/" title="archive"><div class="headline">文章</div><div class="length-num">7</div></a><a href="/tags/" title="tag"><div class="headline">标签</div><div class="length-num">5</div></a><a href="/categories/" title="category"><div class="headline">分类</div><div class="length-num">3</div></a></div><span class="sidebar-menu-item-title">功能</span><div class="sidebar-menu-item"><a class="darkmode_switchbutton menu-child" href="javascript:void(0);" title="显示模式"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span>显示模式</span></a></div><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://cygg.top/" title="博客"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/favicon.ico" alt="博客"/><span class="back-menu-item-text">博客</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">娱乐</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://game.cygg.top/" title="小游戏"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://image.anheyu.com/favicon.ico" alt="小游戏"/><span class="back-menu-item-text">小游戏</span></a></div></div></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 我的</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/creative-lab/"><i class="anzhiyufont anzhiyu-icon-flask faa-tada" style="font-size: 0.9em;"></i><span> 实验室</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/essay/"><i class="anzhiyufont anzhiyu-icon-comment faa-tada" style="font-size: 0.9em;"></i><span> 说说</span></a></li></ul></div></div><span class="sidebar-menu-item-title">标签</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/AI/" style="font-size: 0.88rem;">AI<sup>2</sup></a><a href="/tags/%E6%97%85%E6%B8%B8/" style="font-size: 0.88rem;">旅游<sup>1</sup></a><a href="/tags/%E7%B3%BB%E7%BB%9F/" style="font-size: 0.88rem;">系统<sup>1</sup></a><a href="/tags/%E8%84%9A%E6%9C%AC/" style="font-size: 0.88rem;">脚本<sup>2</sup></a><a href="/tags/%E9%97%B2%E8%A8%80/" style="font-size: 0.88rem;">闲言<sup>1</sup></a></div></div><hr/></div></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="anzhiyufont anzhiyu-icon-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="anzhiyufont anzhiyu-icon-gear"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="anzhiyufont anzhiyu-icon-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="anzhiyufont anzhiyu-icon-xmark"></i></button></nav><div class="is-center" id="loading-database"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-pulse-icon"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="anzhiyufont anzhiyu-icon-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="anzhiyufont anzhiyu-icon-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right" style="font-size: 1rem;"></i></div><div class="rightMenu-item" id="menu-top"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制选中文本</span></div><div class="rightMenu-item" id="menu-pastetext"><i class="anzhiyufont anzhiyu-icon-paste"></i><span>粘贴文本</span></div><a class="rightMenu-item" id="menu-commenttext"><i class="anzhiyufont anzhiyu-icon-comment-medical"></i><span>引用到评论</span></a><div class="rightMenu-item" id="menu-newwindow"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink"><i class="anzhiyufont anzhiyu-icon-link"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg"><i class="anzhiyufont anzhiyu-icon-images"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg"><i class="anzhiyufont anzhiyu-icon-download"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-newwindowimg"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开图片</span></div><div class="rightMenu-item" id="menu-search"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>站内搜索</span></div><div class="rightMenu-item" id="menu-searchBaidu"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>百度搜索</span></div><div class="rightMenu-item" id="menu-music-toggle"><i class="anzhiyufont anzhiyu-icon-play"></i><span>播放音乐</span></div><div class="rightMenu-item" id="menu-music-back"><i class="anzhiyufont anzhiyu-icon-backward"></i><span>切换到上一首</span></div><div class="rightMenu-item" id="menu-music-forward"><i class="anzhiyufont anzhiyu-icon-forward"></i><span>切换到下一首</span></div><div class="rightMenu-item" id="menu-music-playlist" onclick="window.open(&quot;https://y.qq.com/n/ryqq/playlist/8802438608&quot;, &quot;_blank&quot;);" style="display: none;"><i class="anzhiyufont anzhiyu-icon-radio"></i><span>查看所有歌曲</span></div><div class="rightMenu-item" id="menu-music-copyMusicName"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制歌名</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item menu-link" id="menu-randomPost"><i class="anzhiyufont anzhiyu-icon-shuffle"></i><span>随便逛逛</span></a><a class="rightMenu-item menu-link" href="/categories/"><i class="anzhiyufont anzhiyu-icon-cube"></i><span>博客分类</span></a><a class="rightMenu-item menu-link" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags"></i><span>文章标签</span></a></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item" id="menu-copy" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制地址</span></a><a class="rightMenu-item" id="menu-commentBarrage" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-message"></i><span class="menu-commentBarrage-text">关闭热评</span></a><a class="rightMenu-item" id="menu-darkmode" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span class="menu-darkmode-text">深色模式</span></a><a class="rightMenu-item" id="menu-translate" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-language"></i><span>轉為繁體</span></a></div></div><div id="rightmenu-mask"></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.cbd.int/@fancyapps/ui@6.1.6/dist/fancybox/fancybox.umd.js"></script><script src="https://cdn.cbd.int/instant.page@5.2.0/instantpage.js" type="module"></script><script src="https://cdn.cbd.int/vanilla-lazyload@19.1.3/dist/lazyload.iife.min.js"></script><script src="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.js"></script><canvas id="universe"></canvas><script async src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/dark/dark.js"></script><script async src="/anzhiyu/random.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><input type="hidden" name="page-type" id="page-type" value="post"></div><script>var visitorMail = "";
+</script><script async data-pjax src="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/waterfall/waterfall.js"></script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.9/icon/ali_iconfont_css.css"><script>window.addEventListener("DOMContentLoaded",function(){if(location.pathname.indexOf("/creative-lab/")===0){var s=document.createElement("script");s.src="/js/lab.js";document.body.appendChild(s);}});</script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/aplayer/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.cbd.int/anzhiyu-blog-static@1.0.1/js/APlayer.min.js"></script><script src="https://cdn.cbd.int/hexo-anzhiyu-music@1.0.1/assets/js/Meting2.min.js"></script><script src="https://cdn.cbd.int/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+  // removeEventListener scroll 
+  anzhiyu.removeGlobalFnEvent('pjax')
+  anzhiyu.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script charset="UTF-8" src="https://cdn.cbd.int/anzhiyu-theme-static@1.1.5/accesskey/accesskey.js"></script></div><div id="popup-window"><div class="popup-window-title">通知</div><div class="popup-window-divider"></div><div class="popup-window-content"><div class="popup-tip">你好呀</div><div class="popup-link"><i class="anzhiyufont anzhiyu-icon-arrow-circle-right"></i></div></div></div></body></html>
